@@ -1,392 +1,1810 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>CV.Rental Mobil Arifubila</title>
-    <!-- Custom fonts for this template -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-    
+    <title>Data Mobil | CV. Rental Mobil Arifubila</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap / SB Admin -->
     <link href="../css/sb-admin-2.css" rel="stylesheet">
 
     <style>
-        .custom-btn {
-            background-color: #6F7B7F;
-            color: #ffffff;
-            transition: background-color 0.3s, color 0.3s;
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        background: #080b12 !important;
+        color: #fff;
+    }
+
+    #content-wrapper {
+        background:
+            radial-gradient(
+                circle at 80% 10%,
+                rgba(37,99,235,.08),
+                transparent 25%
+            ),
+            #080b12 !important;
+    }
+
+    /* =========================
+   SIDEBAR
+========================= */
+
+.sidebar-modern {
+    background: linear-gradient(
+        180deg,
+        #0d1117 0%,
+        #080b10 100%
+    ) !important;
+
+    border-right: 1px solid rgba(255,255,255,.08);
+}
+
+.sidebar-brand {
+    height: 80px;
+    transition: .3s ease;
+}
+
+.sidebar-brand:hover {
+    transform: translateY(-2px);
+}
+
+.brand-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #1d4ed8
+    );
+
+    color: #fff;
+
+    box-shadow:
+        0 8px 25px rgba(37,99,235,.25);
+}
+
+.sidebar-brand-text {
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: .5px;
+    color: #fff;
+}
+
+.sidebar .nav-item {
+    margin: 5px 12px;
+}
+
+.sidebar .nav-link {
+    border-radius: 12px;
+    color: #94a3b8 !important;
+    padding: 13px 15px;
+
+    transition:
+        background .25s ease,
+        color .25s ease,
+        box-shadow .25s ease;
+}
+
+.sidebar .nav-link i {
+    width: 20px;
+    margin-right: 8px;
+    color: #64748b;
+
+    transition: color .25s ease;
+}
+
+/* HOVER */
+.sidebar .nav-link:hover {
+    background: rgba(59,130,246,.12);
+    color: #fff !important;
+
+    /* Jangan pakai translateX */
+    transform: none;
+}
+
+.sidebar .nav-link:hover i {
+    color: #60a5fa;
+}
+
+/* ACTIVE NAVBAR */
+.sidebar .nav-item.active > .nav-link {
+    background: linear-gradient(
+        135deg,
+        rgba(37,99,235,.25),
+        rgba(14,165,233,.10)
+    );
+
+    color: #fff !important;
+
+    border: 1px solid rgba(96,165,250,.15);
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.15);
+}
+
+.sidebar .nav-item.active > .nav-link i {
+    color: #60a5fa;
+}
+
+/* =========================
+   SIDEBAR HEADING
+========================= */
+
+.sidebar-heading {
+    color: #475569 !important;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    padding-left: 20px;
+}
+
+/* =========================
+   COLLAPSE MENU
+========================= */
+
+.collapse-inner {
+    background: #111827 !important;
+
+    border: 1px solid rgba(255,255,255,.06);
+
+    border-radius: 12px !important;
+
+    margin-top: 5px;
+}
+
+.collapse-header {
+    color: #475569 !important;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.collapse-item {
+    color: #94a3b8 !important;
+
+    border-radius: 8px;
+
+    transition:
+        background .2s ease,
+        color .2s ease;
+}
+
+/* HOVER SUBMENU */
+.collapse-item:hover {
+    background: rgba(59,130,246,.12);
+    color: #fff !important;
+
+    /* Jangan geser */
+    transform: none;
+}
+
+/* ACTIVE DATA MOBIL */
+.collapse-item.active-item {
+    background: linear-gradient(
+        135deg,
+        rgba(37,99,235,.25),
+        rgba(14,165,233,.10)
+    );
+
+    color: #fff !important;
+
+    border: 1px solid rgba(96,165,250,.12);
+}
+
+.collapse-item.active-item i {
+    color: #60a5fa;
+}
+
+    /* =====================================================
+       TOPBAR
+    ===================================================== */
+
+    .topbar-modern {
+        height: 78px;
+
+        background: rgba(8,11,18,.88) !important;
+
+        border-bottom:
+            1px solid rgba(255,255,255,.07) !important;
+
+        backdrop-filter: blur(15px);
+    }
+
+    .search-modern {
+        width: 330px;
+    }
+
+    .search-modern .form-control {
+        height: 42px;
+
+        background: #111827 !important;
+
+        border:
+            1px solid rgba(255,255,255,.08) !important;
+
+        color: #fff !important;
+
+        border-radius: 12px 0 0 12px;
+    }
+
+    .search-modern .form-control::placeholder {
+        color: #64748b;
+    }
+
+    .search-modern .btn {
+        border-radius: 0 12px 12px 0;
+
+        background: #2563eb !important;
+
+        border: none;
+
+        color: #fff;
+
+        transition: .25s ease;
+    }
+
+    .search-modern .btn:hover {
+        background: #1d4ed8 !important;
+    }
+
+    .topbar-icon {
+        width: 40px;
+        height: 40px;
+
+        border-radius: 12px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        transition: .25s ease;
+    }
+
+    .topbar-icon:hover {
+        background: rgba(59,130,246,.12);
+        transform: translateY(-2px);
+    }
+
+    .profile-name {
+        color: #fff !important;
+        font-weight: 600;
+    }
+
+    .img-profile {
+        width: 38px;
+        height: 38px;
+
+        object-fit: cover;
+
+        border:
+            2px solid rgba(96,165,250,.4);
+    }
+
+    .badge-counter {
+        border-radius: 50px;
+        font-size: 9px;
+    }
+
+    /* =====================================================
+       PAGE HEADER
+    ===================================================== */
+
+    .page-header {
+        display: flex;
+
+        justify-content: space-between;
+        align-items: center;
+
+        margin: 25px 0 30px;
+
+        animation: fadeUp .6s ease;
+    }
+
+    .page-title {
+        font-size: 28px;
+        font-weight: 800;
+
+        letter-spacing: -1px;
+
+        margin: 0;
+    }
+
+    .page-subtitle {
+        color: #64748b;
+        font-size: 13px;
+
+        margin-top: 6px;
+    }
+
+    /* =====================================================
+       MAIN CARD
+    ===================================================== */
+
+    .modern-card {
+        background: linear-gradient(
+            145deg,
+            #151b25,
+            #0d1117
+        );
+
+        border:
+            1px solid rgba(255,255,255,.07);
+
+        border-radius: 20px;
+
+        overflow: hidden;
+
+        box-shadow:
+            0 20px 50px rgba(0,0,0,.30);
+
+        animation: fadeUp .7s ease;
+
+        transition:
+            border-color .3s ease,
+            box-shadow .3s ease;
+    }
+
+    .modern-card:hover {
+        border-color: rgba(96,165,250,.15);
+
+        box-shadow:
+            0 20px 55px rgba(0,0,0,.35),
+            0 0 30px rgba(37,99,235,.05);
+    }
+
+    .card-header-modern {
+        padding: 20px 24px;
+
+        border-bottom:
+            1px solid rgba(255,255,255,.06);
+
+        display: flex;
+
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .card-title-modern {
+        margin: 0;
+
+        font-size: 16px;
+        font-weight: 700;
+    }
+
+    .card-title-modern i {
+        color: #60a5fa;
+        margin-right: 8px;
+    }
+
+    /* =====================================================
+       BUTTON ADD
+    ===================================================== */
+
+    .btn-add {
+        background: linear-gradient(
+            135deg,
+            #2563eb,
+            #1d4ed8
+        );
+
+        color: #fff !important;
+
+        border: none;
+
+        border-radius: 11px;
+
+        padding: 11px 17px;
+
+        font-size: 12px;
+        font-weight: 700;
+
+        letter-spacing: .2px;
+
+        transition: all .25s ease;
+
+        box-shadow:
+            0 8px 20px rgba(37,99,235,.18);
+    }
+
+    .btn-add:hover {
+        transform: translateY(-2px);
+
+        color: #fff !important;
+
+        box-shadow:
+            0 12px 25px rgba(37,99,235,.30);
+    }
+
+    /* =====================================================
+       TABLE
+    ===================================================== */
+
+    .table-container {
+        padding: 0 20px 20px;
+    }
+
+    .modern-table {
+        margin: 0;
+
+        color: #fff;
+
+        border-collapse: separate;
+
+        border-spacing: 0 8px;
+    }
+
+    .modern-table thead th {
+        border: none !important;
+
+        color: #64748b;
+
+        font-size: 10px;
+
+        text-transform: uppercase;
+
+        letter-spacing: 1px;
+
+        font-weight: 700;
+
+        padding: 15px;
+    }
+
+    .modern-table tbody tr {
+        background: #111827;
+
+        transition:
+            all .25s ease;
+    }
+
+    .modern-table tbody tr:hover {
+        background: #172033;
+
+        transform: translateY(-2px);
+
+        box-shadow:
+            0 8px 20px rgba(0,0,0,.25);
+    }
+
+    .modern-table tbody td {
+        border: none !important;
+
+        padding: 16px 15px;
+
+        vertical-align: middle;
+
+        font-size: 13px;
+    }
+
+    .modern-table tbody td:first-child {
+        border-radius: 12px 0 0 12px;
+
+        color: #64748b;
+
+        font-weight: 600;
+    }
+
+    .modern-table tbody td:last-child {
+        border-radius: 0 12px 12px 0;
+    }
+
+    /* =====================================================
+       PLATE
+    ===================================================== */
+
+    .plate {
+        display: inline-flex;
+
+        align-items: center;
+
+        padding: 6px 10px;
+
+        background: rgba(255,255,255,.05);
+
+        border:
+            1px solid rgba(255,255,255,.08);
+
+        border-radius: 8px;
+
+        font-weight: 700;
+
+        font-size: 12px;
+
+        letter-spacing: .5px;
+
+        color: #e2e8f0;
+    }
+
+    .plate i {
+        color: #60a5fa;
+    }
+
+    .car-name {
+        font-weight: 700;
+        color: #fff;
+    }
+
+    .brand {
+        color: #94a3b8;
+    }
+
+    /* =====================================================
+       TRANSMISSION
+    ===================================================== */
+
+    .transmission {
+        display: inline-flex;
+
+        align-items: center;
+
+        gap: 6px;
+
+        padding: 6px 10px;
+
+        border-radius: 20px;
+
+        background:
+            rgba(37,99,235,.08);
+
+        border:
+            1px solid rgba(37,99,235,.15);
+
+        color: #60a5fa;
+
+        font-size: 10px;
+
+        font-weight: 600;
+    }
+
+    /* =====================================================
+       ACTION
+    ===================================================== */
+
+    .action-buttons {
+        display: flex;
+
+        gap: 7px;
+
+        justify-content: center;
+    }
+
+    .btn-action {
+        width: 36px;
+        height: 36px;
+
+        border: none;
+
+        border-radius: 9px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        color: #fff !important;
+
+        transition: all .25s ease;
+    }
+
+    /* EDIT */
+
+    .btn-edit {
+        background: #2563eb;
+    }
+
+    .btn-edit:hover {
+        background: #1d4ed8;
+    }
+
+    /* DELETE */
+
+    .btn-delete {
+        background: #dc3545;
+    }
+
+    .btn-delete:hover {
+        background: #b91c1c;
+    }
+
+    .btn-action:hover {
+        transform:
+            translateY(-3px)
+            scale(1.05);
+
+        box-shadow:
+            0 8px 18px rgba(0,0,0,.35);
+    }
+
+    /* =====================================================
+       EMPTY DATA
+    ===================================================== */
+
+    .empty-data {
+        text-align: center;
+
+        padding: 45px !important;
+
+        color: #64748b;
+    }
+
+    .empty-data i {
+        font-size: 30px;
+
+        margin-bottom: 10px;
+
+        color: #475569;
+    }
+
+    /* =====================================================
+       DROPDOWN
+    ===================================================== */
+
+    .dropdown-menu {
+        background: #111827 !important;
+
+        border:
+            1px solid rgba(255,255,255,.08);
+
+        border-radius: 14px;
+
+        padding: 8px;
+
+        box-shadow:
+            0 20px 50px rgba(0,0,0,.35);
+    }
+
+    .dropdown-item {
+        color: #94a3b8;
+
+        border-radius: 8px;
+
+        transition: .2s ease;
+    }
+
+    .dropdown-item:hover {
+        background: rgba(59,130,246,.12);
+
+        color: #fff;
+    }
+
+    /* =====================================================
+       MODAL
+    ===================================================== */
+
+    .modal-content {
+        background: #111827;
+
+        color: #fff;
+
+        border:
+            1px solid rgba(255,255,255,.08);
+
+        border-radius: 18px;
+
+        overflow: hidden;
+
+        box-shadow:
+            0 25px 70px rgba(0,0,0,.5);
+    }
+
+    .modal-header,
+    .modal-footer {
+        border-color:
+            rgba(255,255,255,.07);
+    }
+
+    .modal-header .close {
+        color: #fff;
+
+        opacity: .7;
+    }
+
+    .modal-header .close:hover {
+        opacity: 1;
+    }
+
+    .modal-body {
+        color: #94a3b8;
+    }
+
+    .btn-modal-cancel {
+        background: #1f2937;
+
+        color: #fff !important;
+
+        border:
+            1px solid rgba(255,255,255,.08);
+
+        border-radius: 9px;
+
+        transition: .25s ease;
+    }
+
+    .btn-modal-cancel:hover {
+        background: #374151;
+    }
+
+    .btn-modal-delete {
+        background: #dc3545;
+
+        color: #fff !important;
+
+        border: none;
+
+        border-radius: 9px;
+
+        transition: .25s ease;
+    }
+
+    .btn-modal-delete:hover {
+        background: #b91c1c;
+
+        transform: translateY(-1px);
+    }
+
+    /* =====================================================
+       ANIMATION
+    ===================================================== */
+
+    @keyframes fadeUp {
+
+        from {
+            opacity: 0;
+            transform: translateY(15px);
         }
 
-        .custom-btn:hover {
-            background-color: #AFAEAE;
-            color: #ffffff;
+        to {
+            opacity: 1;
+            transform: translateY(0);
         }
 
-        .tkecil {
-            font-size: 0.7rem;
+    }
+
+    /* =====================================================
+       MOBILE
+    ===================================================== */
+
+    @media (max-width: 768px) {
+
+        .topbar-modern {
+            height: 65px;
         }
 
-        .car-image {
+        .page-header {
+            display: block;
+
+            margin-top: 20px;
+        }
+
+        .page-header .btn-add {
+            margin-top: 15px;
+        }
+
+        .search-modern {
+            display: none;
+        }
+
+        .page-title {
+            font-size: 23px;
+        }
+
+        .modern-table thead {
+            display: none;
+        }
+
+        .modern-table,
+        .modern-table tbody,
+        .modern-table tr,
+        .modern-table td {
+            display: block;
+
             width: 100%;
-            height: auto;
-            object-fit: cover;
         }
-        @media (max-width: 768px) {
-            .table thead {
-                display: none;
-            }
 
-            .table tr {
-                display: block;
-                margin-bottom: 15px;
-            }
+        .modern-table tbody tr {
+            margin-bottom: 15px;
 
-            .table td {
-                display: block;
-                text-align: right;
-                font-size: 14px;
-                padding-left: 50%;
-                position: relative;
-            }
+            padding: 10px 0;
 
-            .table td::before {
-                content: attr(data-label);
-                position: absolute;
-                left: 0;
-                width: 50%;
-                padding-left: 10px;
-                text-align: left;
-                font-weight: bold;
-            }
+            border-radius: 12px;
         }
-    </style>
+
+        .modern-table tbody td {
+            text-align: right;
+
+            padding: 10px 15px;
+
+            border-radius: 0 !important;
+
+            position: relative;
+
+            padding-left: 45%;
+        }
+
+        .modern-table tbody td::before {
+
+            content: attr(data-label);
+
+            position: absolute;
+
+            left: 15px;
+
+            color: #64748b;
+
+            font-size: 10px;
+
+            text-transform: uppercase;
+
+            font-weight: 700;
+
+            letter-spacing: .5px;
+        }
+
+        .action-buttons {
+            justify-content: flex-end;
+        }
+
+        .card-header-modern {
+            padding: 18px;
+        }
+
+        .table-container {
+            padding: 0 10px 10px;
+        }
+
+    }
+
+    @media (max-width: 576px) {
+
+        .container-fluid {
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+
+        .sidebar .nav-item {
+            margin-left: 8px;
+            margin-right: 8px;
+        }
+
+        .card-title-modern {
+            font-size: 14px;
+        }
+
+        .btn-add {
+            width: 100%;
+            text-align: center;
+        }
+
+    }
+</style>
+
 </head>
 
 <body id="page-top">
 
-    <!-- Page Wrapper -->
-    <div id="wrapper">
+<div id="wrapper">
 
-        <!-- Sidebar -->
-        <ul class="navbar-nav sidebar sidebar-dark accordion border border-secondary-subtle border-start-0" id="accordionSidebar" style="background-color: #0F0F0F;">
 
-            <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="../home.php">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fa-solid fa-crown fs-5"></i>
-                </div>
-                <div class="sidebar-brand-text mx-3">CV.Arifubila</div>
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <ul class="navbar-nav sidebar sidebar-dark accordion sidebar-modern"
+        id="accordionSidebar">
+
+
+        <!-- BRAND -->
+
+        <a class="sidebar-brand d-flex align-items-center justify-content-center"
+           href="../home.php">
+
+            <div class="brand-icon">
+
+                <i class="fa-solid fa-car-side"></i>
+
+            </div>
+
+            <div class="sidebar-brand-text mx-3">
+
+                CV. ARIFUBILA
+
+            </div>
+
+        </a>
+
+
+        <hr class="sidebar-divider my-0">
+
+
+        <!-- DASHBOARD -->
+
+        <li class="nav-item">
+
+            <a class="nav-link"
+               href="../home.php">
+
+                <i class="fas fa-fw fa-house"></i>
+
+                <span>
+                    Dashboard
+                </span>
+
             </a>
 
-            <!-- Divider -->
-            <hr class="sidebar-divider my-0">
+        </li>
 
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
-                <a class="nav-link" href="../home.php">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span>
-                </a>
-            </li>
 
-            <!-- Divider -->
-            <hr class="sidebar-divider">
+        <hr class="sidebar-divider">
 
-            <!-- Heading -->
-            <div class="sidebar-heading">Interface</div>
 
-            <!-- Nav Item - Data Kategori -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Data Kategori</span>
-                </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="py-2 collapse-inner rounded" style="background-color: #6F7B7F;">
-                        <h6 class="collapse-header">Data Kategori:</h6>
-                        <a class="collapse-item text-white" href="mobil.php">Data Mobil</a>
-                        <a class="collapse-item text-white" href="../pelanggan/pelanggan.php">Data Pelanggan</a>
-                    </div>
+        <!-- HEADING -->
+
+        <div class="sidebar-heading">
+
+            MENU UTAMA
+
+        </div>
+
+
+        <!-- DATA MASTER -->
+
+        <li class="nav-item active">
+
+            <a class="nav-link"
+               href="#"
+               data-toggle="collapse"
+               data-target="#collapseData"
+               aria-expanded="true"
+               aria-controls="collapseData">
+
+                <i class="fas fa-fw fa-database"></i>
+
+                <span>
+                    Data Master
+                </span>
+
+            </a>
+
+
+            <div id="collapseData"
+                 class="collapse show"
+                 aria-labelledby="headingData"
+                 data-parent="#accordionSidebar">
+
+
+                <div class="py-2 collapse-inner rounded">
+
+
+                    <h6 class="collapse-header">
+
+                        KELOLA DATA:
+
+                    </h6>
+
+
+                    <!-- DATA MOBIL ACTIVE -->
+
+                    <a class="collapse-item active-item"
+                       href="mobil.php">
+
+                        <i class="fas fa-car mr-2"></i>
+
+                        Data Mobil
+
+                    </a>
+
+
+                    <!-- DATA PELANGGAN -->
+
+                    <a class="collapse-item"
+                       href="../pelanggan/pelanggan.php">
+
+                        <i class="fas fa-users mr-2"></i>
+
+                        Data Pelanggan
+
+                    </a>
+
+
                 </div>
-            </li>
 
-            <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link" href="../rental/rental.php">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Rental Mobil</span>
-                </a>
-            </li>
-            
-            <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
-
-            <!-- Sidebar Toggler (Sidebar) -->
-            <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div>
-        </ul>
-        <!-- End of Sidebar -->
 
-        <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column border border-start-0" style="background-color: #0F0F0F;">
-            <!-- Main Content -->
-            <div id="content">
-                <!-- Topbar -->
-                <nav class="navbar navbar-expand border-bottom topbar mb-4 static-top shadow" style="background-color: #0F0F0F;">
-                    <!-- Sidebar Toggle (Topbar) -->
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                        <i class="fa fa-bars"></i>
-                    </button>
+        </li>
 
-                    <!-- Topbar Search -->
-<!-- Topbar Search -->
-    <!-- Topbar Search -->
-    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search" action="cari_mobil.php" method="GET">
-        <div class="input-group">
-            <input type="text" name="keyword" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" required>
-            <div class="input-group-append">
-                <button class="btn btn-secondary" type="submit">
-                    <i class="fas fa-search fa-sm"></i>
+
+        <!-- RENTAL -->
+
+        <li class="nav-item">
+
+            <a class="nav-link"
+               href="../rental/rental.php">
+
+                <i class="fas fa-fw fa-key"></i>
+
+                <span>
+                    Rental Mobil
+                </span>
+
+            </a>
+
+        </li>
+
+
+        <hr class="sidebar-divider d-none d-md-block">
+
+
+        <!-- SIDEBAR TOGGLE -->
+
+        <div class="text-center d-none d-md-inline">
+
+            <button
+                class="rounded-circle border-0"
+                id="sidebarToggle">
+            </button>
+
+        </div>
+
+
+    </ul>
+
+
+    <!-- =====================================================
+         CONTENT WRAPPER
+    ====================================================== -->
+
+    <div id="content-wrapper"
+         class="d-flex flex-column">
+
+
+        <div id="content">
+
+
+            <!-- =====================================================
+                 TOPBAR
+            ====================================================== -->
+
+            <nav class="navbar navbar-expand topbar topbar-modern mb-4 static-top shadow">
+
+
+                <!-- MOBILE SIDEBAR -->
+
+                <button
+                    id="sidebarToggleTop"
+                    class="btn btn-link d-md-none rounded-circle mr-3">
+
+                    <i class="fa fa-bars text-white"></i>
+
                 </button>
-            </div>
-        </div>
-    </form>
 
-                    <!-- Topbar Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-                        <li class="nav-item dropdown no-arrow d-sm-none">
-                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-search fa-fw"></i>
-                            </a>
-                            <!-- Dropdown - Messages -->
-                            <div class="dropdown-menu dropdown-menu-right p-3 shadow ano_trx_arifated--grow-in" aria-labelledby="searchDropdown">
-                                <form class="form-inline mr-auto w-100 navbar-search">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-primary" type="button">
-                                                <i class="fas fa-search fa-sm"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </li>
 
-                        <!-- Nav Item - Alerts -->
-                        <li class="nav-item dropdown no-arrow mx-1">
-                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-bell fa-fw text-white"></i>
-                                <span class="badge badge-danger badge-counter">3+</span>
-                            </a>
-                            <!-- Dropdown - Alerts -->
-                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow ano_trx_arifated--grow-in" aria-labelledby="alertsDropdown">
-                                <h6 class="dropdown-header bg-secondary">Alerts Center</h6>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="mr-3">
-                                        <div class="icon-circle bg-primary">
-                                            <i class="fas fa-file-alt text-white"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="small text-gray-500">December 12, 2019</div>
-                                        <span class="font-weight-bold">A new monthly report is ready to download!</span>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="mr-3">
-                                        <div class="icon-circle bg-success">
-                                            <i class="fas fa-donate text-white"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="small text-gray-500">December 7, 2019</div>
-                                        $290.29 has been deposited into your account!
-                                    </div>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="mr-3">
-                                        <div class="icon-circle bg-warning">
-                                            <i class="fas fa-exclamation-triangle text-white"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="small text-gray-500">December 2, 2019</div>
-                                        Spending Alert: We've noticed unusually high spending for your account.
-                                    </div>
-                                </a>
-                                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
-                            </div>
-                        </li>
+                <!-- SEARCH -->
 
-                        <div class="topbar-divider d-none d-sm-block"></div>
+                <form
+                    class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 search-modern"
+                    action="cari_mobil.php"
+                    method="GET">
 
-                        <!-- Nav Item - User Information -->
-                        <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-white small">Elon Musk</span>
-                                <img class="img-profile rounded-circle" src="../img/undraw_profile.svg">
-                            </a>
-                            <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow ano_trx_arifated--grow-in" aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> Profile
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i> Settings
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i> Activity Log
-                                </a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> Logout
-                                </a>
-                            </div>
-                        </li>
-                    </ul>
-                </nav>
-                <!-- End of Topbar -->
-                            
-        <!-- Card Car Content -->
-        <div class="container-fluid">
-                    <div class="mb-3" style="background: #222831; border-radius: 20px 20px 15px 15px;">
-                        <div class="p-3 text-white" style="background-color: #31363F; border-radius: 15px 15px 0px 0px;">Data Mobil</div>
-                        <div class="card-body text-success">
-                            <div class="row">
-                                <div class="col-md-6 mb-2">
-                                    <a href='tambah_mobil.php' class='btn custom-btn'>Tambah Data</a>
-                                </div>
-                            </div>
 
-                            <div class="row">
-    <div class="col-md-12">
-    <div class="row">
-                                <div class="col-md-12">
-                                    <div class="table-responsive">
-                                        <table class="table table-bordered table-striped table-hover text-white">
-                                            <thead>
-                                                <tr>
-                                                    <th>No</th>
-                                                    <th>No Plat</th>
-                                                    <th>Nama Mobil</th>
-                                                    <th>Brand Mobil</th>
-                                                    <th>Tipe Transmisi</th>
-                                                    <th>Aksi</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <?php
-                                                include "../koneksi.php";
-                                                $i = 0;
-                                                $tampil = mysqli_query($koneksi, "SELECT * FROM tbl_mobil_arif");
-                                                while ($data = mysqli_fetch_array($tampil)) {
-                                                    $i++;
-                                                ?>
-                                                    <tr>
-                                                        <td><?=$i?></td>
-                                                        <td data-label="No Plat"><?=$data['no_plat_arif']?></td>
-                                                        <td data-label="Nama Mobil"><?=$data['nama_mobil_arif']?></td>
-                                                        <td data-label="Brand Mobil"><?=$data['brand_mobil_arif']?></td>
-                                                        <td data-label="Tipe Transmisi"><?=$data['tipe_transmisi_arif']?></td>
-                                                        <td class="d-flex justify-content-center">
-                                                            <a href="edit_mobil.php?no_plat_arif=<?=$data['no_plat_arif']?>" class='btn btn-primary mr-3'>Edit</a>
-                                                            <a href="#" class="btn btn-danger hapus" onclick="showDeleteModal('delete_mobil.php?no_plat_arif=<?=$data['no_plat_arif']?>')">Hapus</a>
-                                                        </td>
-                                                    </tr>
-                                                <?php
-                                                }
-                                                ?>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="input-group">
+
+
+                        <input
+                            type="text"
+                            name="keyword"
+                            class="form-control"
+                            placeholder="Cari data mobil..."
+                            required>
+
+
+                        <div class="input-group-append">
+
+                            <button
+                                class="btn"
+                                type="submit">
+
+                                <i class="fas fa-search"></i>
+
+                            </button>
+
                         </div>
+
+
                     </div>
+
+
+                </form>
+
+
+                <!-- NAVBAR RIGHT -->
+
+                <ul class="navbar-nav ml-auto">
+
+
+                    <!-- NOTIFICATION -->
+
+                    <li class="nav-item dropdown no-arrow mx-1">
+
+
+                        <a
+                            class="nav-link dropdown-toggle topbar-icon"
+                            href="#"
+                            data-toggle="dropdown">
+
+                            <i class="fas fa-bell text-white"></i>
+
+                            <span class="badge badge-danger badge-counter">
+
+                                3
+
+                            </span>
+
+                        </a>
+
+
+                        <div
+                            class="dropdown-list dropdown-menu dropdown-menu-right shadow">
+
+
+                            <h6 class="dropdown-header bg-secondary">
+
+                                Notifikasi
+
+                            </h6>
+
+
+                            <a
+                                class="dropdown-item"
+                                href="#">
+
+                                <i class="fas fa-car mr-2 text-primary"></i>
+
+                                Data mobil terbaru tersedia.
+
+                            </a>
+
+
+                            <a
+                                class="dropdown-item"
+                                href="#">
+
+                                <i class="fas fa-key mr-2 text-success"></i>
+
+                                Rental baru ditambahkan.
+
+                            </a>
+
+
+                        </div>
+
+
+                    </li>
+
+
+                    <div class="topbar-divider d-none d-sm-block"></div>
+
+
+                    <!-- USER -->
+
+                    <li class="nav-item dropdown no-arrow">
+
+
+                        <a
+                            class="nav-link dropdown-toggle"
+                            href="#"
+                            data-toggle="dropdown">
+
+
+                            <span
+                                class="mr-2 d-none d-lg-inline profile-name small">
+
+                                Admin
+
+                            </span>
+
+
+                            <img
+                                class="img-profile rounded-circle"
+                                src="../img/undraw_profile.svg">
+
+
+                        </a>
+
+
+                        <div
+                            class="dropdown-menu dropdown-menu-right shadow">
+
+
+                            <a
+                                class="dropdown-item"
+                                href="#">
+
+                                <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+
+                                Profile
+
+                            </a>
+
+
+                            <a
+                                class="dropdown-item"
+                                href="#">
+
+                                <i class="fas fa-cog fa-sm fa-fw mr-2 text-gray-400"></i>
+
+                                Settings
+
+                            </a>
+
+
+                            <div class="dropdown-divider"></div>
+
+
+                            <a
+                                class="dropdown-item"
+                                href="#"
+                                data-toggle="modal"
+                                data-target="#logoutModal">
+
+                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+
+                                Logout
+
+                            </a>
+
+
+                        </div>
+
+
+                    </li>
+
+
+                </ul>
+
+
+            </nav>
+
+
+            <!-- =====================================================
+                 MAIN CONTENT
+            ====================================================== -->
+
+            <div class="container-fluid">
+
+
+                <!-- PAGE HEADER -->
+
+                <div class="page-header">
+
+
+                    <div>
+
+                        <h1 class="page-title">
+
+                            Data Mobil
+
+                        </h1>
+
+
+                        <div class="page-subtitle">
+
+                            Kelola daftar kendaraan yang tersedia untuk rental.
+
+                        </div>
+
+                    </div>
+
+
+                    <a
+                        href="tambah_mobil.php"
+                        class="btn btn-add">
+
+                        <i class="fas fa-plus mr-2"></i>
+
+                        Tambah Mobil
+
+                    </a>
+
+
                 </div>
+
+
+                <!-- MAIN CARD -->
+
+                <div class="modern-card">
+
+
+                    <div class="card-header-modern">
+
+
+                        <h5 class="card-title-modern">
+
+                            <i class="fas fa-car"></i>
+
+                            Daftar Kendaraan
+
+                        </h5>
+
+
+                    </div>
+
+
+                    <div class="table-container">
+
+
+                        <div class="table-responsive">
+
+
+                            <table class="table modern-table">
+
+
+                                <thead>
+
+                                    <tr>
+
+                                        <th>
+                                            No
+                                        </th>
+
+                                        <th>
+                                            No Plat
+                                        </th>
+
+                                        <th>
+                                            Nama Mobil
+                                        </th>
+
+                                        <th>
+                                            Brand
+                                        </th>
+
+                                        <th>
+                                            Transmisi
+                                        </th>
+
+                                        <th class="text-center">
+                                            Aksi
+                                        </th>
+
+                                    </tr>
+
+                                </thead>
+
+
+                                <tbody>
+
+
+                                <?php
+
+                                include "../koneksi.php";
+
+                                $i = 0;
+
+                                $tampil = mysqli_query(
+                                    $koneksi,
+                                    "SELECT * FROM tbl_mobil_arif"
+                                );
+
+
+                                if (mysqli_num_rows($tampil) > 0) {
+
+
+                                    while ($data = mysqli_fetch_array($tampil)) {
+
+                                        $i++;
+
+                                ?>
+
+
+                                    <tr>
+
+
+                                        <!-- NO -->
+
+                                        <td data-label="No">
+
+                                            <?= $i ?>
+
+                                        </td>
+
+
+                                        <!-- PLAT -->
+
+                                        <td data-label="No Plat">
+
+                                            <span class="plate">
+
+                                                <i class="fas fa-car mr-2"></i>
+
+                                                <?= htmlspecialchars(
+                                                    $data['no_plat_arif']
+                                                ) ?>
+
+                                            </span>
+
+                                        </td>
+
+
+                                        <!-- NAMA -->
+
+                                        <td data-label="Nama Mobil">
+
+                                            <span class="car-name">
+
+                                                <?= htmlspecialchars(
+                                                    $data['nama_mobil_arif']
+                                                ) ?>
+
+                                            </span>
+
+                                        </td>
+
+
+                                        <!-- BRAND -->
+
+                                        <td data-label="Brand">
+
+                                            <span class="brand">
+
+                                                <?= htmlspecialchars(
+                                                    $data['brand_mobil_arif']
+                                                ) ?>
+
+                                            </span>
+
+                                        </td>
+
+
+                                        <!-- TRANSMISI -->
+
+                                        <td data-label="Transmisi">
+
+                                            <span class="transmission">
+
+                                                <i class="fas fa-gears"></i>
+
+                                                <?= htmlspecialchars(
+                                                    $data['tipe_transmisi_arif']
+                                                ) ?>
+
+                                            </span>
+
+                                        </td>
+
+
+                                        <!-- AKSI -->
+
+                                        <td data-label="Aksi">
+
+
+                                            <div class="action-buttons">
+
+
+                                                <!-- EDIT -->
+
+                                                <a
+                                                    href="edit_mobil.php?no_plat_arif=<?= urlencode($data['no_plat_arif']) ?>"
+                                                    class="btn-action btn-edit"
+                                                    title="Edit">
+
+                                                    <i class="fas fa-pen"></i>
+
+                                                </a>
+
+
+                                                <!-- DELETE -->
+
+                                                <button
+                                                    type="button"
+                                                    class="btn-action btn-delete"
+                                                    title="Hapus"
+                                                    onclick="showDeleteModal(
+                                                        'delete_mobil.php?no_plat_arif=<?= urlencode($data['no_plat_arif']) ?>'
+                                                    )">
+
+                                                    <i class="fas fa-trash"></i>
+
+                                                </button>
+
+
+                                            </div>
+
+
+                                        </td>
+
+
+                                    </tr>
+
+
+                                <?php
+
+                                    }
+
+
+                                } else {
+
+
+                                ?>
+
+
+                                    <tr>
+
+                                        <td
+                                            colspan="6"
+                                            class="empty-data">
+
+                                            <i class="fas fa-car"></i>
+
+                                            <div>
+
+                                                Belum ada data mobil.
+
+                                            </div>
+
+                                        </td>
+
+                                    </tr>
+
+
+                                <?php
+
+                                }
+
+                                ?>
+
+
+                                </tbody>
+
+
+                            </table>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
         </div>
 
-        <!-- Modal Delete -->
-        <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header text-dark">
-                        <h5 class="modal-title" id="deleteModalLabel">Konfirmasi Hapus</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body text-dark">
-                        Apakah Anda yakin ingin menghapus data mobil ini?
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                        <a href="daftar_mobil" id="confirmDelete" class="btn btn-danger">Hapus</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+
     </div>
+
+
 </div>
-                        </div>
-                    </div>
-                </div>
 
-            </div>
-        </div>
-    </div>
 
-    <script>
-        function showDeleteModal(url) {
-            // Set URL untuk konfirmasi hapus
-            document.getElementById('confirmDelete').setAttribute('href', url);
+<!-- =====================================================
+     DELETE MODAL
+====================================================== -->
 
-            // Tampilkan modal
-            var deleteModal = new bootstrap.Modal(document.getElementById('deleteModal'));
-            deleteModal.show();
-        }
-    </script>
+<div
+    class="modal fade"
+    id="deleteModal"
+    tabindex="-1"
+    role="dialog">
 
- <!-- Logout Modal-->
- <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+
+    <div
+        class="modal-dialog modal-dialog-centered"
+        role="document">
+
+
         <div class="modal-content">
+
+
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
+
+
+                <h5 class="modal-title">
+
+                    <i class="fas fa-triangle-exclamation text-warning mr-2"></i>
+
+                    Konfirmasi Hapus
+
+                </h5>
+
+
+                <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal">
+
+                    <span>&times;</span>
+
                 </button>
+
+
             </div>
-            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+
+
+            <div class="modal-body">
+
+                Apakah Anda yakin ingin menghapus data mobil ini?
+
+                <div class="text-muted small mt-2">
+
+                    Data yang sudah dihapus tidak dapat dikembalikan.
+
+                </div>
+
+            </div>
+
+
             <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="../login.php">Logout</a>
+
+
+                <button
+                    type="button"
+                    class="btn btn-modal-cancel"
+                    data-dismiss="modal">
+
+                    Batal
+
+                </button>
+
+
+                <a
+                    href="#"
+                    id="confirmDelete"
+                    class="btn btn-modal-delete">
+
+                    <i class="fas fa-trash mr-1"></i>
+
+                    Hapus
+
+                </a>
+
+
             </div>
+
+
         </div>
+
+
     </div>
+
+
 </div>
-<!-- Bootstrap core JavaScript-->
+
+
+<!-- =====================================================
+     LOGOUT MODAL
+====================================================== -->
+
+<div
+    class="modal fade"
+    id="logoutModal"
+    tabindex="-1"
+    role="dialog">
+
+
+    <div
+        class="modal-dialog modal-dialog-centered"
+        role="document">
+
+
+        <div class="modal-content">
+
+
+            <div class="modal-header">
+
+
+                <h5 class="modal-title">
+
+                    Konfirmasi Logout
+
+                </h5>
+
+
+                <button
+                    class="close"
+                    type="button"
+                    data-dismiss="modal">
+
+                    <span>&times;</span>
+
+                </button>
+
+
+            </div>
+
+
+            <div class="modal-body">
+
+                Apakah Anda yakin ingin keluar dari sistem?
+
+            </div>
+
+
+            <div class="modal-footer">
+
+
+                <button
+                    class="btn btn-modal-cancel"
+                    type="button"
+                    data-dismiss="modal">
+
+                    Batal
+
+                </button>
+
+
+                <a
+                    class="btn btn-modal-delete"
+                    href="../login.php">
+
+                    <i class="fas fa-sign-out-alt mr-1"></i>
+
+                    Logout
+
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+
 <script src="../vendor/jquery/jquery.min.js"></script>
-    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Core plugin JavaScript-->
-    <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Custom scripts for all pages-->
-    <script src="../js/sb-admin-2.min.js"></script>
+<script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
 
-    <!-- Page level plugins -->
-    <script src="../vendor/chart.js/Chart.min.js"></script>
+<script src="../js/sb-admin-2.min.js"></script>
 
-    <!-- Page level custom scripts -->
-    <script src="../js/demo/chart-area-demo.js"></script>
-    <script src="../js/demo/chart-pie-demo.js"></script>
+
+<script>
+
+function showDeleteModal(url) {
+
+    document
+        .getElementById('confirmDelete')
+        .setAttribute('href', url);
+
+    $('#deleteModal').modal('show');
+
+}
+
+</script>
+
 
 </body>
 

@@ -1,385 +1,1716 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>CV.Rental Mobil Arifubila</title>
-    <!-- Custom fonts for this template -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-    
+    <title>Data Pelanggan | CV. Rental Mobil Arifubila</title>
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Bootstrap / SB Admin 2 -->
     <link href="../css/sb-admin-2.css" rel="stylesheet">
 
     <style>
-        .custom-btn {
-            background-color: #6F7B7F;
-            color: #ffffff;
-            transition: background-color 0.3s, color 0.3s;
+
+        * {
+            box-sizing: border-box;
         }
 
-        .custom-btn:hover {
-            background-color: #AFAEAE;
-            color: #ffffff;
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #080b12 !important;
+            color: #fff;
         }
 
-        .tkecil {
-            font-size: 0.7rem;
+        /* =========================
+           SIDEBAR
+        ========================= */
+
+        #accordionSidebar {
+            background: linear-gradient(
+                180deg,
+                #0d1117 0%,
+                #080b10 100%
+            ) !important;
+
+            border-right: 1px solid rgba(255,255,255,.08);
         }
 
-        .car-image {
-            width: 100%;
-            height: auto;
+        .sidebar-brand {
+            height: 80px;
+            transition: .3s ease;
+        }
+
+        .sidebar-brand:hover {
+            transform: translateY(-2px);
+        }
+
+        .sidebar-brand-icon {
+            color: #60a5fa !important;
+        }
+
+        .sidebar-brand-text {
+            font-size: 15px;
+            font-weight: 800;
+            letter-spacing: .5px;
+        }
+
+        .sidebar .nav-item {
+            margin: 5px 12px;
+        }
+
+        .sidebar .nav-link {
+            border-radius: 12px;
+            color: #94a3b8 !important;
+            padding: 13px 15px;
+            transition: all .25s ease;
+        }
+
+        .sidebar .nav-link i {
+            color: #64748b;
+            transition: .25s ease;
+        }
+
+        .sidebar .nav-link:hover {
+            background: rgba(59,130,246,.12);
+            color: #fff !important;
+            transform: translateX(4px);
+        }
+
+        .sidebar .nav-link:hover i {
+            color: #60a5fa;
+        }
+
+        .sidebar .nav-item.active .nav-link {
+            background: linear-gradient(
+                135deg,
+                rgba(37,99,235,.25),
+                rgba(14,165,233,.10)
+            );
+
+            color: #fff !important;
+            border: 1px solid rgba(96,165,250,.15);
+        }
+
+        .sidebar .nav-item.active .nav-link i {
+            color: #60a5fa;
+        }
+
+        .sidebar-heading {
+            color: #475569 !important;
+            font-size: 10px;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+            padding-left: 20px;
+        }
+
+        .collapse-inner {
+            background: #111827 !important;
+            border: 1px solid rgba(255,255,255,.06);
+            border-radius: 12px !important;
+        }
+
+        .collapse-header {
+            color: #64748b !important;
+        }
+
+        .collapse-item {
+            color: #94a3b8 !important;
+            border-radius: 8px;
+            transition: .2s;
+        }
+
+        .collapse-item:hover {
+            background: rgba(59,130,246,.12);
+            color: #fff !important;
+        }
+
+        /* =========================
+           CONTENT
+        ========================= */
+
+        #content-wrapper {
+            background:
+                radial-gradient(
+                    circle at 80% 10%,
+                    rgba(37,99,235,.08),
+                    transparent 25%
+                ),
+                #080b12 !important;
+        }
+
+        /* =========================
+           TOPBAR
+        ========================= */
+
+        .topbar {
+            height: 78px;
+            background: rgba(8,11,18,.88) !important;
+            border-bottom: 1px solid rgba(255,255,255,.07) !important;
+            backdrop-filter: blur(15px);
+        }
+
+        .navbar-search .form-control {
+            height: 42px;
+            background: #111827 !important;
+            color: #fff !important;
+            border: 1px solid rgba(255,255,255,.08) !important;
+            border-radius: 12px 0 0 12px;
+        }
+
+        .navbar-search .form-control::placeholder {
+            color: #64748b;
+        }
+
+        .navbar-search .btn {
+            height: 42px;
+            border-radius: 0 12px 12px 0;
+            background: #2563eb !important;
+            border: none;
+            transition: .2s;
+        }
+
+        .navbar-search .btn:hover {
+            background: #1d4ed8 !important;
+        }
+
+        .topbar .nav-link {
+            color: #fff !important;
+            transition: .2s;
+        }
+
+        .topbar .nav-link:hover {
+            opacity: .75;
+        }
+
+        .topbar-divider {
+            border-left: 1px solid rgba(255,255,255,.1) !important;
+        }
+
+        .img-profile {
+            width: 38px;
+            height: 38px;
             object-fit: cover;
+            border: 2px solid rgba(96,165,250,.4);
         }
+
+        .badge-counter {
+            border-radius: 50px;
+            font-size: 9px;
+        }
+
+        /* =========================
+           PAGE HEADER
+        ========================= */
+
+        .page-header {
+            margin: 25px 0 30px;
+        }
+
+        .page-title {
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 6px;
+        }
+
+        .page-subtitle {
+            color: #64748b;
+            font-size: 13px;
+            margin-bottom: 0;
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 8px 13px;
+            border-radius: 50px;
+            background: rgba(34,197,94,.08);
+            border: 1px solid rgba(34,197,94,.15);
+            color: #4ade80;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .status-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #22c55e;
+            box-shadow: 0 0 10px #22c55e;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: .5;
+                transform: scale(.7);
+            }
+
+        }
+
+        /* =========================
+           DATA CARD
+        ========================= */
+
+        .data-card {
+            position: relative;
+            overflow: hidden;
+
+            background: linear-gradient(
+                145deg,
+                #151b25,
+                #0d1117
+            );
+
+            border: 1px solid rgba(255,255,255,.07);
+            border-radius: 20px;
+
+            box-shadow:
+                0 20px 50px rgba(0,0,0,.25);
+
+            animation: cardAppear .7s ease both;
+        }
+
+        @keyframes cardAppear {
+
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+        .data-card-header {
+            padding: 22px 24px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            border-bottom: 1px solid rgba(255,255,255,.06);
+        }
+
+        .data-card-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .data-card-icon {
+            width: 40px;
+            height: 40px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 11px;
+
+            background: rgba(37,99,235,.12);
+            border: 1px solid rgba(96,165,250,.12);
+
+            color: #60a5fa;
+        }
+
+        .data-card-title h5 {
+            margin: 0;
+            font-size: 15px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .data-card-title span {
+            display: block;
+            margin-top: 3px;
+
+            color: #64748b;
+            font-size: 11px;
+        }
+
+        /* =========================
+           ADD BUTTON
+        ========================= */
+
+        .btn-add {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            padding: 10px 15px;
+
+            border: none;
+            border-radius: 11px;
+
+            background: linear-gradient(
+                135deg,
+                #2563eb,
+                #1d4ed8
+            );
+
+            color: #fff !important;
+
+            font-size: 11px;
+            font-weight: 700;
+
+            text-decoration: none !important;
+
+            box-shadow:
+                0 8px 20px rgba(37,99,235,.18);
+
+            transition: all .25s ease;
+        }
+
+        .btn-add:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 12px 25px rgba(37,99,235,.3);
+
+            color: #fff !important;
+        }
+
+        /* =========================
+           TABLE
+        ========================= */
+
+        .table-container {
+            padding: 20px;
+        }
+
+        .table-wrapper {
+            overflow: hidden;
+
+            border: 1px solid rgba(255,255,255,.06);
+            border-radius: 15px;
+
+            background: rgba(17,24,39,.65);
+        }
+
+        .modern-table {
+            margin-bottom: 0;
+            color: #fff;
+        }
+
+        .modern-table thead th {
+            background: #111827;
+
+            border: none !important;
+
+            color: #64748b;
+
+            padding: 15px;
+
+            font-size: 10px;
+            font-weight: 700;
+
+            text-transform: uppercase;
+            letter-spacing: .8px;
+
+            white-space: nowrap;
+        }
+
+        .modern-table tbody tr {
+            background: rgba(13,17,23,.7);
+
+            transition:
+                background .25s ease,
+                transform .25s ease;
+        }
+
+        .modern-table tbody tr:hover {
+            background: rgba(37,99,235,.06);
+            transform: translateY(-1px);
+        }
+
+        .modern-table tbody td {
+            border-top: 1px solid rgba(255,255,255,.05) !important;
+
+            padding: 15px;
+
+            color: #cbd5e1;
+
+            font-size: 12px;
+
+            vertical-align: middle;
+        }
+
+        /* =========================
+           NUMBER
+        ========================= */
+
+        .number-badge {
+            width: 30px;
+            height: 30px;
+
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 9px;
+
+            background: rgba(37,99,235,.10);
+            border: 1px solid rgba(96,165,250,.12);
+
+            color: #60a5fa;
+
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        /* =========================
+           CUSTOMER
+        ========================= */
+
+        .customer-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .customer-avatar {
+            width: 34px;
+            height: 34px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            flex-shrink: 0;
+
+            border-radius: 10px;
+
+            background: linear-gradient(
+                135deg,
+                rgba(37,99,235,.25),
+                rgba(14,165,233,.10)
+            );
+
+            border: 1px solid rgba(96,165,250,.15);
+
+            color: #60a5fa;
+        }
+
+        .customer-name {
+            color: #fff;
+            font-weight: 600;
+            font-size: 12px;
+        }
+
+        .nik-text {
+            display: inline-flex;
+            padding: 6px 9px;
+
+            border-radius: 7px;
+
+            background: rgba(255,255,255,.04);
+            border: 1px solid rgba(255,255,255,.06);
+
+            color: #94a3b8;
+
+            font-family: monospace;
+            font-size: 11px;
+        }
+
+        .phone-text {
+            color: #94a3b8;
+        }
+
+        .phone-text i {
+            color: #60a5fa;
+        }
+
+        .address-text {
+            display: inline-flex;
+            align-items: center;
+
+            max-width: 300px;
+
+            color: #94a3b8;
+        }
+
+        .address-text i {
+            color: #60a5fa;
+            margin-right: 7px;
+        }
+
+        /* =========================
+           ACTION BUTTONS
+        ========================= */
+
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 7px;
+        }
+
+        .btn-action {
+            width: 35px;
+            height: 35px;
+
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 9px;
+
+            border: 1px solid transparent;
+
+            transition: all .25s ease;
+        }
+
+        .btn-edit {
+            background: rgba(37,99,235,.12);
+            border-color: rgba(96,165,250,.12);
+            color: #60a5fa !important;
+        }
+
+        .btn-delete {
+            background: rgba(239,68,68,.10);
+            border-color: rgba(248,113,113,.10);
+            color: #f87171 !important;
+        }
+
+        .btn-action:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 18px rgba(0,0,0,.25);
+        }
+
+        .btn-edit:hover {
+            background: rgba(37,99,235,.25);
+        }
+
+        .btn-delete:hover {
+            background: rgba(239,68,68,.22);
+        }
+
+        /* =========================
+           EMPTY DATA
+        ========================= */
+
+        .empty-data {
+            padding: 60px 20px !important;
+
+            text-align: center;
+
+            color: #64748b;
+        }
+
+        .empty-icon {
+            width: 60px;
+            height: 60px;
+
+            margin: 0 auto 15px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 16px;
+
+            background: rgba(37,99,235,.08);
+            border: 1px solid rgba(96,165,250,.10);
+
+            color: #60a5fa;
+
+            font-size: 22px;
+        }
+
+        .empty-data h5 {
+            color: #cbd5e1;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .empty-data p {
+            color: #64748b;
+            font-size: 11px;
+            margin: 5px 0 0;
+        }
+
+        /* =========================
+           DROPDOWN
+        ========================= */
+
+        .dropdown-menu {
+            background: #111827;
+            border: 1px solid rgba(255,255,255,.08);
+            border-radius: 14px;
+            padding: 8px;
+
+            box-shadow:
+                0 20px 50px rgba(0,0,0,.35);
+        }
+
+        .dropdown-item {
+            color: #94a3b8;
+            border-radius: 8px;
+            font-size: 12px;
+            transition: .2s;
+        }
+
+        .dropdown-item:hover {
+            background: rgba(59,130,246,.10);
+            color: #fff;
+        }
+
+        .dropdown-header {
+            border-radius: 9px;
+            background: #2563eb !important;
+            color: #fff !important;
+        }
+
+        /* =========================
+           MODAL
+        ========================= */
+
+        .modal-content {
+            background: #111827;
+
+            border: 1px solid rgba(255,255,255,.08);
+
+            border-radius: 18px;
+
+            color: #fff;
+
+            box-shadow:
+                0 25px 70px rgba(0,0,0,.5);
+        }
+
+        .modal-header {
+            border-bottom: 1px solid rgba(255,255,255,.07);
+        }
+
+        .modal-footer {
+            border-top: 1px solid rgba(255,255,255,.07);
+        }
+
+        .modal .close {
+            color: #fff;
+            opacity: .7;
+        }
+
+        .modal .close:hover {
+            opacity: 1;
+        }
+
+        .btn-modal-cancel {
+            background: #1e293b;
+            color: #cbd5e1;
+            border: 1px solid rgba(255,255,255,.08);
+            border-radius: 9px;
+        }
+
+        .btn-modal-delete {
+            background: #dc2626;
+            color: #fff !important;
+            border: none;
+            border-radius: 9px;
+        }
+
+        .btn-modal-delete:hover {
+            background: #b91c1c;
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
         @media (max-width: 768px) {
-            .table thead {
+
+            .topbar {
+                height: 65px;
+            }
+
+            .page-header {
+                margin-top: 20px;
+            }
+
+            .page-title {
+                font-size: 23px;
+            }
+
+            .status-badge {
+                margin-top: 12px;
+            }
+
+            .data-card-header {
+                display: block;
+            }
+
+            .btn-add {
+                margin-top: 15px;
+            }
+
+            .table-container {
+                padding: 12px;
+            }
+
+            .modern-table thead {
                 display: none;
             }
 
-            .table tr {
+            .modern-table,
+            .modern-table tbody,
+            .modern-table tr,
+            .modern-table td {
                 display: block;
-                margin-bottom: 15px;
+                width: 100%;
             }
 
-            .table td {
-                display: block;
-                text-align: right;
-                font-size: 14px;
-                padding-left: 50%;
+            .modern-table tbody tr {
+                margin-bottom: 14px;
+
+                border-radius: 14px;
+
+                border: 1px solid rgba(255,255,255,.06);
+
+                padding: 8px;
+            }
+
+            .modern-table tbody td {
+                border: none !important;
+
                 position: relative;
+
+                text-align: right;
+
+                padding: 10px 8px 10px 48%;
+
+                min-height: 40px;
             }
 
-            .table td::before {
+            .modern-table tbody td::before {
                 content: attr(data-label);
+
                 position: absolute;
-                left: 0;
-                width: 50%;
-                padding-left: 10px;
+
+                left: 8px;
+                top: 10px;
+
+                width: 42%;
+
                 text-align: left;
-                font-weight: bold;
+
+                color: #64748b;
+
+                font-size: 9px;
+                font-weight: 700;
+
+                text-transform: uppercase;
+                letter-spacing: .5px;
             }
+
+            .modern-table tbody td:first-child {
+                display: none;
+            }
+
+            .customer-info {
+                justify-content: flex-end;
+            }
+
+            .address-text {
+                max-width: 100%;
+                justify-content: flex-end;
+            }
+
+            .action-buttons {
+                justify-content: flex-end;
+            }
+
         }
+
+        @media (max-width: 576px) {
+
+            .container-fluid {
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+
+            .page-title {
+                font-size: 21px;
+            }
+
+            .page-subtitle {
+                font-size: 12px;
+            }
+
+            .data-card-header {
+                padding: 18px;
+            }
+
+            .data-card-title h5 {
+                font-size: 14px;
+            }
+
+            .btn-add {
+                width: 100%;
+                justify-content: center;
+            }
+
+        }
+
     </style>
+
 </head>
 
 <body id="page-top">
 
-    <!-- Page Wrapper -->
-    <div id="wrapper">
+<div id="wrapper">
 
-        <!-- Sidebar -->
-        <ul class="navbar-nav sidebar sidebar-dark accordion border border-secondary-subtle border-start-0" id="accordionSidebar" style="background-color: #0F0F0F;">
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
 
-            <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="home.php">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fa-solid fa-crown fs-5"></i>
-                </div>
-                <div class="sidebar-brand-text mx-3">CV.Arifubila</div>
+    <ul class="navbar-nav sidebar sidebar-dark accordion"
+        id="accordionSidebar">
+
+        <!-- Brand -->
+
+        <a class="sidebar-brand d-flex align-items-center justify-content-center"
+           href="../home.php">
+
+            <div class="sidebar-brand-icon">
+                <i class="fa-solid fa-car-side"></i>
+            </div>
+
+            <div class="sidebar-brand-text mx-3">
+                CV. ARIFUBILA
+            </div>
+
+        </a>
+
+        <hr class="sidebar-divider my-0">
+
+        <!-- Dashboard -->
+
+        <li class="nav-item">
+
+            <a class="nav-link"
+               href="../home.php">
+
+                <i class="fas fa-fw fa-chart-pie"></i>
+
+                <span>
+                    Dashboard
+                </span>
+
             </a>
 
-            <!-- Divider -->
-            <hr class="sidebar-divider my-0">
+        </li>
 
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
-                <a class="nav-link" href="../home.php">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span>
-                </a>
-            </li>
+        <hr class="sidebar-divider">
 
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <!-- Heading -->
-            <div class="sidebar-heading">Interface</div>
-
-            <!-- Nav Item - Data Kategori -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Data Kategori</span>
-                </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="py-2 collapse-inner rounded" style="background-color: #6F7B7F;">
-                        <h6 class="collapse-header">Data Kategori:</h6>
-                        <a class="collapse-item text-white" href="../mobil/mobil.php">Data Mobil</a>
-                        <a class="collapse-item text-white" href="pelanggan.php">Data Pelanggan</a>
-                    </div>
-                </div>
-            </li>
-
-            <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link" href="../rental/rental.php">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Rental Mobil</span>
-                </a>
-            </li>
-            
-            <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
-
-            <!-- Sidebar Toggler (Sidebar) -->
-            <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
-            </div>
-        </ul>
-        <!-- End of Sidebar -->
-
-        <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column border border-start-0" style="background-color: #0F0F0F;">
-            <!-- Main Content -->
-            <div id="content">
-                <!-- Topbar -->
-                <nav class="navbar navbar-expand border-bottom topbar mb-4 static-top shadow" style="background-color: #0F0F0F;">
-                    <!-- Sidebar Toggle (Topbar) -->
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                        <i class="fa fa-bars"></i>
-                    </button>
-
-                    <!-- Topbar Search -->
-<!-- Topbar Search -->
-    <!-- Topbar Search -->
-    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search" action="cari_pelanggan.php" method="GET">
-        <div class="input-group">
-            <input type="text" name="keyword" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" required>
-            <div class="input-group-append">
-                <button class="btn btn-secondary" type="submit">
-                    <i class="fas fa-search fa-sm"></i>
-                </button>
-            </div>
+        <div class="sidebar-heading">
+            MANAGEMENT
         </div>
-    </form>
 
-                    <!-- Topbar Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-                        <li class="nav-item dropdown no-arrow d-sm-none">
-                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-search fa-fw"></i>
-                            </a>
-                            <!-- Dropdown - Messages -->
-                            <div class="dropdown-menu dropdown-menu-right p-3 shadow ano_trx_arifated--grow-in" aria-labelledby="searchDropdown">
-                                <form class="form-inline mr-auto w-100 navbar-search">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-primary" type="button">
-                                                <i class="fas fa-search fa-sm"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </li>
+        <!-- Data Master -->
 
-                        <!-- Nav Item - Alerts -->
-                        <li class="nav-item dropdown no-arrow mx-1">
-                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-bell fa-fw text-white"></i>
-                                <span class="badge badge-danger badge-counter">3+</span>
-                            </a>
-                            <!-- Dropdown - Alerts -->
-                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow ano_trx_arifated--grow-in" aria-labelledby="alertsDropdown">
-                                <h6 class="dropdown-header bg-secondary">Alerts Center</h6>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="mr-3">
-                                        <div class="icon-circle bg-primary">
-                                            <i class="fas fa-file-alt text-white"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="small text-gray-500">December 12, 2019</div>
-                                        <span class="font-weight-bold">A new monthly report is ready to download!</span>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="mr-3">
-                                        <div class="icon-circle bg-success">
-                                            <i class="fas fa-donate text-white"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="small text-gray-500">December 7, 2019</div>
-                                        $290.29 has been deposited into your account!
-                                    </div>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="mr-3">
-                                        <div class="icon-circle bg-warning">
-                                            <i class="fas fa-exclamation-triangle text-white"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="small text-gray-500">December 2, 2019</div>
-                                        Spending Alert: We've noticed unusually high spending for your account.
-                                    </div>
-                                </a>
-                                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
-                            </div>
-                        </li>
+        <li class="nav-item active">
 
-                        <div class="topbar-divider d-none d-sm-block"></div>
+            <a class="nav-link"
+               href="#"
+               data-toggle="collapse"
+               data-target="#collapseTwo">
 
-                        <!-- Nav Item - User Information -->
-                        <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-white small">Elon Musk</span>
-                                <img class="img-profile rounded-circle" src="../img/undraw_profile.svg">
-                            </a>
-                            <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow ano_trx_arifated--grow-in" aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> Profile
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i> Settings
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i> Activity Log
-                                </a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> Logout
-                                </a>
-                            </div>
-                        </li>
-                    </ul>
-                </nav>
-                <!-- End of Topbar -->
-                            
-      <!-- Card Car Content -->
-      <div class="container-fluid">
-                    <div class="mb-3" style="background: #222831; border-radius: 20px 20px 15px 15px;">
-                        <div class="p-3 text-white" style="background-color: #31363F; border-radius: 15px 15px 0px 0px;">Data pelanggan</div>
-                        <div class="card-body text-success">
-                            <div class="row">
-                                <div class="col-md-6 mb-2">
-                                    <a href='tambah_pelanggan.php' class='btn custom-btn'>Tambah Data</a>
-                                </div>
-                            </div>
+                <i class="fas fa-fw fa-database"></i>
 
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="table-responsive">
-                                        <table class="table table-bordered table-striped table-hover text-white">
-                                            <thead>
-                                                <tr>
-                                                    <th>No</th>
-                                                    <th>Nik Ktp</th>
-                                                    <th>Nama Pelanggan</th>
-                                                    <th>No Hp</th>
-                                                    <th>Alamat</th>
-                                                    <th>Aksi</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <?php
-                                                include "../koneksi.php";
-                                                $i = 0;
-                                                $tampil = mysqli_query($koneksi, "SELECT * FROM tbl_pelanggan_arif");
-                                                while ($data = mysqli_fetch_array($tampil)) {
-                                                    $i++;
-                                                ?>
-                                                    <tr>
-                                                        <td data-label="No"><?=$i?></td>
-                                                        <td data-label="Nik Ktp"><?=$data['nik_ktp_arif']?></td>
-                                                        <td data-label="Nama Pelanggan"><?=$data['nama_arif']?></td>
-                                                        <td data-label="No Hp"><?=$data['no_hp_arif']?></td>
-                                                        <td data-label="Alamat"><?=$data['alamat_arif']?></td>
-                                                        <td class="d-flex justify-content-center">
-                                                            <a href="edit_pelanggan.php?nik_ktp_arif=<?=$data['nik_ktp_arif']?>" class='btn btn-primary mr-3'>Edit</a>
-                                                            <a href="#" class="btn btn-danger" onclick="showDeleteModal('delete_pelanggan.php?nik_ktp_arif=<?=$data['nik_ktp_arif']?>')">Hapus</a>
-                                                        </td>
-                                                    </tr>
-                                                <?php
-                                                }
-                                                ?>
-                                            </tbody>
-                                        </table>
-                                    </div>
+                <span>
+                    Data Master
+                </span>
 
-                                    <!-- Modal Delete -->
-                                    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog modal-dialog-centered">
-                                            <div class="modal-content">
-                                                <div class="modal-header text-dark">
-                                                    <h5 class="modal-title" id="deleteModalLabel">Konfirmasi Hapus</h5>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                </div>
-                                                <div class="modal-body text-dark">
-                                                    Apakah Anda yakin ingin menghapus data pelanggan ini?
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                                                    <a href="daftar_pelanggan" id="confirmDelete" class="btn btn-danger">Hapus</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+            </a>
+
+            <div id="collapseTwo"
+                 class="collapse show"
+                 data-parent="#accordionSidebar">
+
+                <div class="py-2 collapse-inner rounded">
+
+                    <h6 class="collapse-header">
+                        Kelola Data
+                    </h6>
+
+                    <a class="collapse-item"
+                       href="../mobil/mobil.php">
+
+                        <i class="fas fa-car mr-2"></i>
+
+                        Data Mobil
+
+                    </a>
+
+                    <a class="collapse-item"
+                       href="pelanggan.php">
+
+                        <i class="fas fa-users mr-2"></i>
+
+                        Data Pelanggan
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </li>
+
+        <!-- Rental -->
+
+        <li class="nav-item">
+
+            <a class="nav-link"
+               href="../rental/rental.php">
+
+                <i class="fas fa-fw fa-file-invoice-dollar"></i>
+
+                <span>
+                    Rental Mobil
+                </span>
+
+            </a>
+
+        </li>
+
+        <hr class="sidebar-divider d-none d-md-block">
+
+        <!-- Sidebar Toggle -->
+
+        <div class="text-center d-none d-md-inline">
+
+            <button
+                class="rounded-circle border-0"
+                id="sidebarToggle">
+            </button>
+
+        </div>
+
+    </ul>
+
+
+    <!-- =========================
+         CONTENT
+    ========================== -->
+
+    <div id="content-wrapper"
+         class="d-flex flex-column">
+
+        <div id="content">
+
+            <!-- =========================
+                 TOPBAR
+            ========================== -->
+
+            <nav class="navbar navbar-expand topbar mb-4 static-top shadow">
+
+                <!-- Mobile Toggle -->
+
+                <button
+                    id="sidebarToggleTop"
+                    class="btn btn-link d-md-none rounded-circle mr-3">
+
+                    <i class="fa fa-bars text-white"></i>
+
+                </button>
+
+                <!-- Search -->
+
+                <form
+                    class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 navbar-search"
+                    action="cari_pelanggan.php"
+                    method="GET">
+
+                    <div class="input-group">
+
+                        <input
+                            type="text"
+                            name="keyword"
+                            class="form-control"
+                            placeholder="Cari pelanggan..."
+                            required>
+
+                        <div class="input-group-append">
+
+                            <button
+                                class="btn"
+                                type="submit">
+
+                                <i class="fas fa-search fa-sm"></i>
+
+                            </button>
+
                         </div>
+
                     </div>
+
+                </form>
+
+
+                <!-- Right Navbar -->
+
+                <ul class="navbar-nav ml-auto">
+
+                    <!-- Notification -->
+
+                    <li class="nav-item dropdown no-arrow mx-1">
+
+                        <a
+                            class="nav-link dropdown-toggle"
+                            href="#"
+                            id="alertsDropdown"
+                            data-toggle="dropdown">
+
+                            <i class="fas fa-bell fa-fw text-white"></i>
+
+                            <span class="badge badge-danger badge-counter">
+                                3+
+                            </span>
+
+                        </a>
+
+                        <div
+                            class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in">
+
+                            <h6 class="dropdown-header">
+                                Notification
+                            </h6>
+
+                            <a
+                                class="dropdown-item d-flex align-items-center"
+                                href="#">
+
+                                <div class="mr-3">
+
+                                    <div class="icon-circle bg-primary">
+
+                                        <i class="fas fa-users text-white"></i>
+
+                                    </div>
+
+                                </div>
+
+                                <div>
+
+                                    <div class="small text-gray-500">
+                                        Hari ini
+                                    </div>
+
+                                    <span class="font-weight-bold">
+                                        Data pelanggan tersedia.
+                                    </span>
+
+                                </div>
+
+                            </a>
+
+                        </div>
+
+                    </li>
+
+                    <div class="topbar-divider d-none d-sm-block"></div>
+
+
+                    <!-- User -->
+
+                    <li class="nav-item dropdown no-arrow">
+
+                        <a
+                            class="nav-link dropdown-toggle"
+                            href="#"
+                            id="userDropdown"
+                            data-toggle="dropdown">
+
+                            <span class="mr-2 d-none d-lg-inline text-white small">
+                                Admin
+                            </span>
+
+                            <img
+                                class="img-profile rounded-circle"
+                                src="../img/undraw_profile.svg">
+
+                        </a>
+
+                        <div
+                            class="dropdown-menu dropdown-menu-right shadow animated--grow-in">
+
+                            <a
+                                class="dropdown-item"
+                                href="#">
+
+                                <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+
+                                Profile
+
+                            </a>
+
+                            <a
+                                class="dropdown-item"
+                                href="#">
+
+                                <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+
+                                Settings
+
+                            </a>
+
+                            <div class="dropdown-divider"></div>
+
+                            <a
+                                class="dropdown-item"
+                                href="#"
+                                data-toggle="modal"
+                                data-target="#logoutModal">
+
+                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+
+                                Logout
+
+                            </a>
+
+                        </div>
+
+                    </li>
+
+                </ul>
+
+            </nav>
+
+
+            <!-- =========================
+                 MAIN CONTENT
+            ========================== -->
+
+            <div class="container-fluid">
+
+                <!-- PAGE HEADER -->
+
+                <div class="page-header d-sm-flex align-items-center justify-content-between">
+
+                    <div>
+
+                        <h1 class="page-title">
+                            Data Pelanggan
+                        </h1>
+
+                        <p class="page-subtitle">
+                            Kelola informasi pelanggan yang terdaftar pada sistem rental.
+                        </p>
+
+                    </div>
+
+                    <div class="status-badge">
+
+                        <span class="status-dot"></span>
+
+                        Sistem Online
+
+                    </div>
+
                 </div>
-</div>
+
+
+                <!-- DATA CARD -->
+
+                <div class="data-card">
+
+                    <!-- HEADER -->
+
+                    <div class="data-card-header">
+
+                        <div class="data-card-title">
+
+                            <div class="data-card-icon">
+
+                                <i class="fas fa-users"></i>
+
+                            </div>
+
+                            <div>
+
+                                <h5>
+                                    Daftar Pelanggan
+                                </h5>
+
+                                <span>
+                                    Informasi pelanggan yang terdaftar
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <a
+                            href="tambah_pelanggan.php"
+                            class="btn-add">
+
+                            <i class="fas fa-plus"></i>
+
+                            Tambah Pelanggan
+
+                        </a>
+
+                    </div>
+
+
+                    <!-- TABLE -->
+
+                    <div class="table-container">
+
+                        <div class="table-wrapper">
+
+                            <div class="table-responsive">
+
+                                <table class="table modern-table">
+
+                                    <thead>
+
+                                        <tr>
+
+                                            <th>
+                                                No
+                                            </th>
+
+                                            <th>
+                                                NIK KTP
+                                            </th>
+
+                                            <th>
+                                                Nama Pelanggan
+                                            </th>
+
+                                            <th>
+                                                No HP
+                                            </th>
+
+                                            <th>
+                                                Alamat
+                                            </th>
+
+                                            <th class="text-center">
+                                                Aksi
+                                            </th>
+
+                                        </tr>
+
+                                    </thead>
+
+                                    <tbody>
+
+                                    <?php
+
+                                    include "../koneksi.php";
+
+                                    $i = 0;
+
+                                    $tampil = mysqli_query(
+                                        $koneksi,
+                                        "SELECT * FROM tbl_pelanggan_arif"
+                                    );
+
+                                    if (mysqli_num_rows($tampil) > 0) {
+
+                                        while ($data = mysqli_fetch_array($tampil)) {
+
+                                            $i++;
+
+                                    ?>
+
+                                        <tr>
+
+                                            <!-- No -->
+
+                                            <td data-label="No">
+
+                                                <span class="number-badge">
+                                                    <?= $i ?>
+                                                </span>
+
+                                            </td>
+
+
+                                            <!-- NIK -->
+
+                                            <td data-label="NIK KTP">
+
+                                                <span class="nik-text">
+
+                                                    <?= htmlspecialchars(
+                                                        $data['nik_ktp_arif']
+                                                    ) ?>
+
+                                                </span>
+
+                                            </td>
+
+
+                                            <!-- Nama -->
+
+                                            <td data-label="Nama Pelanggan">
+
+                                                <div class="customer-info">
+
+                                                    <div class="customer-avatar">
+
+                                                        <i class="fas fa-user"></i>
+
+                                                    </div>
+
+                                                    <span class="customer-name">
+
+                                                        <?= htmlspecialchars(
+                                                            $data['nama_arif']
+                                                        ) ?>
+
+                                                    </span>
+
+                                                </div>
+
+                                            </td>
+
+
+                                            <!-- No HP -->
+
+                                            <td data-label="No HP">
+
+                                                <span class="phone-text">
+
+                                                    <i class="fas fa-phone mr-1"></i>
+
+                                                    <?= htmlspecialchars(
+                                                        $data['no_hp_arif']
+                                                    ) ?>
+
+                                                </span>
+
+                                            </td>
+
+
+                                            <!-- Alamat -->
+
+                                            <td data-label="Alamat">
+
+                                                <span class="address-text">
+
+                                                    <i class="fas fa-location-dot"></i>
+
+                                                    <?= htmlspecialchars(
+                                                        $data['alamat_arif']
+                                                    ) ?>
+
+                                                </span>
+
+                                            </td>
+
+
+                                            <!-- Action -->
+
+                                            <td data-label="Aksi">
+
+                                                <div class="action-buttons">
+
+                                                    <!-- Edit -->
+
+                                                    <a
+                                                        href="edit_pelanggan.php?nik_ktp_arif=<?= urlencode(
+                                                            $data['nik_ktp_arif']
+                                                        ) ?>"
+                                                        class="btn-action btn-edit"
+                                                        title="Edit">
+
+                                                        <i class="fas fa-pen"></i>
+
+                                                    </a>
+
+
+                                                    <!-- Delete -->
+
+                                                    <button
+                                                        type="button"
+                                                        class="btn-action btn-delete"
+                                                        title="Hapus"
+
+                                                        onclick="showDeleteModal(
+                                                            'delete_pelanggan.php?nik_ktp_arif=<?= urlencode(
+                                                                $data['nik_ktp_arif']
+                                                            ) ?>'
+                                                        )">
+
+                                                        <i class="fas fa-trash"></i>
+
+                                                    </button>
+
+                                                </div>
+
+                                            </td>
+
+                                        </tr>
+
+                                    <?php
+
+                                        }
+
+                                    } else {
+
+                                    ?>
+
+                                        <!-- EMPTY -->
+
+                                        <tr>
+
+                                            <td
+                                                colspan="6"
+                                                class="empty-data">
+
+                                                <div class="empty-icon">
+
+                                                    <i class="fas fa-users"></i>
+
+                                                </div>
+
+                                                <h5>
+                                                    Belum Ada Data Pelanggan
+                                                </h5>
+
+                                                <p>
+                                                    Silakan tambahkan data pelanggan baru.
+                                                </p>
+
+                                            </td>
+
+                                        </tr>
+
+                                    <?php
+
+                                    }
+
+                                    ?>
+
+                                    </tbody>
+
+                                </table>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
 
             </div>
+
         </div>
+
     </div>
 
-    <script>
-        function showDeleteModal(url) {
-            // Set URL untuk konfirmasi hapus
-            document.getElementById('confirmDelete').setAttribute('href', url);
+</div>
 
-            // Tampilkan modal
-            var deleteModal = new bootstrap.Modal(document.getElementById('deleteModal'));
-            deleteModal.show();
-        }
-    </script>
 
- <!-- Logout Modal-->
- <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+<!-- =========================
+     DELETE MODAL
+========================= -->
+
+<div
+    class="modal fade"
+    id="deleteModal"
+    tabindex="-1"
+    role="dialog">
+
+    <div
+        class="modal-dialog modal-dialog-centered"
+        role="document">
+
         <div class="modal-content">
+
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
+
+                <h5 class="modal-title">
+
+                    <i class="fas fa-triangle-exclamation text-warning mr-2"></i>
+
+                    Konfirmasi Hapus
+
+                </h5>
+
+                <button
+                    class="close"
+                    type="button"
+                    data-dismiss="modal">
+
+                    <span>&times;</span>
+
                 </button>
+
             </div>
-            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+
+            <div class="modal-body">
+
+                Apakah Anda yakin ingin menghapus
+                <strong>data pelanggan</strong> ini?
+
+                <br>
+
+                <small class="text-muted">
+
+                    Data yang sudah dihapus tidak dapat dikembalikan.
+
+                </small>
+
+            </div>
+
             <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="../login.php">Logout</a>
+
+                <button
+                    type="button"
+                    class="btn btn-modal-cancel"
+                    data-dismiss="modal">
+
+                    Batal
+
+                </button>
+
+                <a
+                    href="#"
+                    id="confirmDelete"
+                    class="btn btn-modal-delete">
+
+                    <i class="fas fa-trash mr-1"></i>
+
+                    Hapus
+
+                </a>
+
             </div>
+
         </div>
+
     </div>
+
 </div>
-<!-- Bootstrap core JavaScript-->
+
+
+<!-- =========================
+     LOGOUT MODAL
+========================= -->
+
+<div
+    class="modal fade"
+    id="logoutModal"
+    tabindex="-1"
+    role="dialog">
+
+    <div
+        class="modal-dialog modal-dialog-centered"
+        role="document">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title">
+
+                    <i class="fas fa-sign-out-alt mr-2"></i>
+
+                    Konfirmasi Logout
+
+                </h5>
+
+                <button
+                    class="close"
+                    type="button"
+                    data-dismiss="modal">
+
+                    <span>&times;</span>
+
+                </button>
+
+            </div>
+
+            <div class="modal-body">
+
+                Apakah kamu yakin ingin keluar dari sistem?
+
+            </div>
+
+            <div class="modal-footer">
+
+                <button
+                    class="btn btn-modal-cancel"
+                    type="button"
+                    data-dismiss="modal">
+
+                    Batal
+
+                </button>
+
+                <a
+                    class="btn btn-modal-delete"
+                    href="../destroy_session.php">
+
+                    <i class="fas fa-sign-out-alt mr-1"></i>
+
+                    Logout
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
 <script src="../vendor/jquery/jquery.min.js"></script>
-    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Core plugin JavaScript-->
-    <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Custom scripts for all pages-->
-    <script src="../js/sb-admin-2.min.js"></script>
+<script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
 
-    <!-- Page level plugins -->
-    <script src="../vendor/chart.js/Chart.min.js"></script>
+<script src="../js/sb-admin-2.min.js"></script>
 
-    <!-- Page level custom scripts -->
-    <script src="../js/demo/chart-area-demo.js"></script>
-    <script src="../js/demo/chart-pie-demo.js"></script>
+<script>
+
+function showDeleteModal(url) {
+
+    document
+        .getElementById('confirmDelete')
+        .setAttribute('href', url);
+
+    $('#deleteModal').modal('show');
+
+}
+
+</script>
 
 </body>
 

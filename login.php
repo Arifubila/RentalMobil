@@ -64,13 +64,11 @@ if (!empty($_SESSION['username_arif']) && !empty($_SESSION['password_arif'])) {
             flex-direction: column;
             justify-content: space-between;
             padding: 50px;
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(15, 23, 42, 0.95),
-                    rgba(30, 41, 59, 0.88)
-                ),
-                url('img/login-bg.jpg') center/cover;
+            background: linear-gradient(
+    135deg,
+    #0f172a,
+    #1e293b
+);
         }
 
         .login-banner::after {
