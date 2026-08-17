@@ -1,349 +1,1692 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
 
-    <title>CV.Rental Mobil Arifubila</title>
-    <!-- Custom fonts for this template -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Tambah Mobil | CV. Rental Mobil Arifubila</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap / SB Admin -->
     <link href="../css/sb-admin-2.css" rel="stylesheet">
 
     <style>
-        .custom-btn {
-            background-color: #6F7B7F;
-            color: #ffffff;
-            transition: background-color 0.3s, color 0.3s;
+
+        * {
+            box-sizing: border-box;
         }
 
-        .custom-btn:hover {
-            background-color: #AFAEAE;
-            color: #ffffff;
+        /* =====================================================
+           GLOBAL
+        ===================================================== */
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #080b12 !important;
+            color: #fff;
         }
 
-        .tkecil {
-            font-size: 0.7rem;
+        #content-wrapper {
+            background:
+                radial-gradient(
+                    circle at 80% 10%,
+                    rgba(37, 99, 235, .08),
+                    transparent 25%
+                ),
+                #080b12 !important;
         }
 
-        .car-image {
-            width: 100%;
-            height: auto;
+        /* =====================================================
+           SIDEBAR
+        ===================================================== */
+
+        #accordionSidebar {
+            background:
+                linear-gradient(
+                    180deg,
+                    #0d1117 0%,
+                    #080b10 100%
+                ) !important;
+
+            border-right: 1px solid rgba(255,255,255,.08);
+        }
+
+        .sidebar-brand {
+            height: 80px;
+            transition: .3s ease;
+        }
+
+        .sidebar-brand:hover {
+            transform: translateY(-2px);
+        }
+
+        .brand-icon {
+            width: 38px;
+            height: 38px;
+
+            border-radius: 12px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #2563eb,
+                    #1d4ed8
+                );
+
+            color: #fff;
+
+            box-shadow:
+                0 8px 25px rgba(37,99,235,.25);
+        }
+
+        .sidebar-brand-text {
+            font-size: 14px;
+            font-weight: 800;
+            letter-spacing: .8px;
+            color: #fff;
+        }
+
+        .sidebar .nav-item {
+            margin: 5px 12px;
+        }
+
+        .sidebar .nav-link {
+            border-radius: 12px;
+
+            color: #94a3b8 !important;
+
+            padding: 13px 15px;
+
+            transition:
+                all .25s ease;
+        }
+
+        .sidebar .nav-link i {
+            width: 20px;
+
+            margin-right: 8px;
+
+            color: #64748b;
+
+            transition: .25s ease;
+        }
+
+        .sidebar .nav-link:hover {
+            background:
+                rgba(59,130,246,.12);
+
+            color: #fff !important;
+
+            transform: translateX(3px);
+        }
+
+        .sidebar .nav-link:hover i {
+            color: #60a5fa;
+
+            transform: scale(1.08);
+        }
+
+        /* ACTIVE MENU */
+
+        .sidebar .nav-item.active > .nav-link {
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(37,99,235,.25),
+                    rgba(14,165,233,.10)
+                );
+
+            color: #fff !important;
+
+            border:
+                1px solid rgba(96,165,250,.15);
+
+            box-shadow:
+                0 8px 20px rgba(0,0,0,.15);
+        }
+
+        .sidebar .nav-item.active > .nav-link i {
+            color: #60a5fa;
+        }
+
+        .sidebar-heading {
+            color: #475569 !important;
+
+            font-size: 10px;
+
+            letter-spacing: 1.5px;
+
+            font-weight: 700;
+
+            padding-left: 20px;
+        }
+
+        /* =====================================================
+           COLLAPSE SIDEBAR
+        ===================================================== */
+
+        .collapse-inner {
+            background: #111827 !important;
+
+            border:
+                1px solid rgba(255,255,255,.06);
+
+            border-radius: 12px !important;
+
+            margin-top: 5px;
+
+            padding: 8px !important;
+        }
+
+        .collapse-header {
+            color: #475569 !important;
+
+            font-size: 10px;
+
+            letter-spacing: .8px;
+
+            font-weight: 700;
+        }
+
+        .collapse-item {
+            color: #94a3b8 !important;
+
+            border-radius: 8px;
+
+            padding: 10px 12px;
+
+            transition: .2s ease;
+        }
+
+        .collapse-item:hover {
+            background:
+                rgba(59,130,246,.12);
+
+            color: #fff !important;
+
+            transform: translateX(3px);
+        }
+
+        /* ACTIVE DATA MOBIL */
+
+        .collapse-item.active-item {
+            background:
+                rgba(37,99,235,.20);
+
+            color: #fff !important;
+
+            border:
+                1px solid rgba(96,165,250,.12);
+        }
+
+        .collapse-item.active-item i {
+            color: #60a5fa;
+        }
+
+        /* =====================================================
+           TOPBAR
+        ===================================================== */
+
+        .topbar-modern {
+            height: 78px;
+
+            background:
+                rgba(8,11,18,.88) !important;
+
+            border-bottom:
+                1px solid rgba(255,255,255,.07) !important;
+
+            backdrop-filter: blur(15px);
+        }
+
+        .search-modern {
+            width: 330px;
+        }
+
+        .search-modern .form-control {
+            height: 42px;
+
+            background: #111827 !important;
+
+            border:
+                1px solid rgba(255,255,255,.08) !important;
+
+            color: #fff !important;
+
+            border-radius: 12px 0 0 12px;
+        }
+
+        .search-modern .form-control::placeholder {
+            color: #64748b;
+        }
+
+        .search-modern .btn {
+            height: 42px;
+
+            border-radius: 0 12px 12px 0;
+
+            background: #2563eb !important;
+
+            border: none;
+
+            color: #fff;
+
+            transition: .25s ease;
+        }
+
+        .search-modern .btn:hover {
+            background: #1d4ed8 !important;
+        }
+
+        .topbar-icon {
+            width: 40px;
+            height: 40px;
+
+            border-radius: 12px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            transition: .25s ease;
+        }
+
+        .topbar-icon:hover {
+            background:
+                rgba(59,130,246,.12);
+
+            transform: translateY(-2px);
+        }
+
+        .profile-name {
+            color: #fff !important;
+
+            font-weight: 600;
+        }
+
+        .img-profile {
+            width: 38px;
+            height: 38px;
+
             object-fit: cover;
+
+            border:
+                2px solid rgba(96,165,250,.4);
         }
+
+        .badge-counter {
+            border-radius: 50px;
+
+            font-size: 9px;
+        }
+
+        /* =====================================================
+           PAGE HEADER
+        ===================================================== */
+
+        .page-header {
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin:
+                25px 0 30px;
+
+            animation:
+                fadeUp .6s ease;
+        }
+
+        .page-title {
+            font-size: 28px;
+
+            font-weight: 800;
+
+            letter-spacing: -1px;
+
+            margin: 0;
+        }
+
+        .page-subtitle {
+            color: #64748b;
+
+            font-size: 13px;
+
+            margin-top: 7px;
+        }
+
+        /* =====================================================
+           FORM CARD
+        ===================================================== */
+
+        .form-card {
+            position: relative;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #151b25,
+                    #0d1117
+                );
+
+            border:
+                1px solid rgba(255,255,255,.07);
+
+            border-radius: 20px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 20px 50px rgba(0,0,0,.25);
+
+            animation:
+                fadeUp .7s ease;
+        }
+
+        .form-card-header {
+            padding: 20px 24px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            border-bottom:
+                1px solid rgba(255,255,255,.07);
+
+            background:
+                rgba(255,255,255,.015);
+        }
+
+        .form-card-header-icon {
+            width: 38px;
+            height: 38px;
+
+            border-radius: 10px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background:
+                rgba(37,99,235,.15);
+
+            color: #60a5fa;
+
+            border:
+                1px solid rgba(96,165,250,.15);
+        }
+
+        .form-card-title {
+            margin: 0;
+
+            font-size: 16px;
+
+            font-weight: 700;
+
+            color: #fff;
+        }
+
+        .form-card-subtitle {
+            color: #64748b;
+
+            font-size: 11px;
+
+            margin-top: 2px;
+        }
+
+        .form-body {
+            padding: 28px 25px;
+        }
+
+        /* =====================================================
+           FORM
+        ===================================================== */
+
+        .form-group-modern {
+            margin-bottom: 22px;
+        }
+
+        .form-label-modern {
+            display: block;
+
+            color: #cbd5e1;
+
+            font-size: 12px;
+
+            font-weight: 600;
+
+            margin-bottom: 8px;
+        }
+
+        .form-label-modern i {
+            color: #60a5fa;
+
+            margin-right: 6px;
+
+            width: 15px;
+        }
+
+        .form-control-modern {
+            width: 100%;
+
+            height: 46px;
+
+            background: #111827 !important;
+
+            border:
+                1px solid rgba(255,255,255,.08) !important;
+
+            border-radius: 11px;
+
+            color: #fff !important;
+
+            font-size: 13px;
+
+            padding:
+                0 14px;
+
+            transition:
+                all .25s ease;
+        }
+
+        .form-control-modern:focus {
+            background: #111827 !important;
+
+            border-color:
+                rgba(96,165,250,.55) !important;
+
+            box-shadow:
+                0 0 0 3px rgba(37,99,235,.10) !important;
+
+            color: #fff !important;
+
+            outline: none;
+        }
+
+        .form-control-modern::placeholder {
+            color: #475569;
+        }
+
+        /* SELECT */
+
+        select.form-control-modern {
+            appearance: none;
+
+            -webkit-appearance: none;
+
+            background-image:
+                linear-gradient(45deg, transparent 50%, #64748b 50%),
+                linear-gradient(135deg, #64748b 50%, transparent 50%);
+
+            background-position:
+                calc(100% - 17px) 19px,
+                calc(100% - 12px) 19px;
+
+            background-size:
+                5px 5px,
+                5px 5px;
+
+            background-repeat: no-repeat;
+
+            padding-right: 40px;
+        }
+
+        select.form-control-modern option {
+            background: #111827;
+
+            color: #fff;
+        }
+
+        /* =====================================================
+           FORM DIVIDER
+        ===================================================== */
+
+        .form-section-title {
+            color: #64748b;
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            letter-spacing: 1.3px;
+
+            text-transform: uppercase;
+
+            margin:
+                5px 0 20px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+        }
+
+        .form-section-title::after {
+            content: "";
+
+            height: 1px;
+
+            flex: 1;
+
+            background:
+                rgba(255,255,255,.06);
+        }
+
+        /* =====================================================
+           BUTTON
+        ===================================================== */
+
+        .form-actions {
+            display: flex;
+
+            justify-content: flex-end;
+
+            gap: 10px;
+
+            padding-top: 10px;
+
+            margin-top: 5px;
+
+            border-top:
+                1px solid rgba(255,255,255,.06);
+        }
+
+        .btn-back {
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 7px;
+
+            min-width: 105px;
+
+            height: 42px;
+
+            border-radius: 10px;
+
+            background:
+                rgba(255,255,255,.05);
+
+            border:
+                1px solid rgba(255,255,255,.08);
+
+            color: #94a3b8 !important;
+
+            font-size: 12px;
+
+            font-weight: 600;
+
+            text-decoration: none !important;
+
+            transition: all .25s ease;
+        }
+
+        .btn-back:hover {
+            background:
+                rgba(255,255,255,.09);
+
+            color: #fff !important;
+
+            transform:
+                translateY(-2px);
+        }
+
+        .btn-save {
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 7px;
+
+            min-width: 120px;
+
+            height: 42px;
+
+            border: none;
+
+            border-radius: 10px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #2563eb,
+                    #1d4ed8
+                );
+
+            color: #fff !important;
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            box-shadow:
+                0 8px 20px rgba(37,99,235,.18);
+
+            transition: all .25s ease;
+        }
+
+        .btn-save:hover {
+            transform:
+                translateY(-2px);
+
+            box-shadow:
+                0 12px 25px rgba(37,99,235,.30);
+
+            color: #fff !important;
+        }
+
+        /* =====================================================
+           DROPDOWN
+        ===================================================== */
+
+        .dropdown-menu {
+            background: #111827;
+
+            border:
+                1px solid rgba(255,255,255,.08);
+
+            border-radius: 14px;
+
+            padding: 8px;
+
+            box-shadow:
+                0 20px 50px rgba(0,0,0,.35);
+        }
+
+        .dropdown-item {
+            color: #94a3b8;
+
+            border-radius: 8px;
+
+            padding: 9px 12px;
+
+            font-size: 12px;
+
+            transition: .2s ease;
+        }
+
+        .dropdown-item:hover {
+            background:
+                rgba(59,130,246,.12);
+
+            color: #fff;
+        }
+
+        .dropdown-divider {
+            border-top:
+                1px solid rgba(255,255,255,.07);
+        }
+
+        /* =====================================================
+           MODAL
+        ===================================================== */
+
+        .modal-content {
+            background: #111827;
+
+            color: #fff;
+
+            border:
+                1px solid rgba(255,255,255,.08);
+
+            border-radius: 18px;
+
+            overflow: hidden;
+        }
+
+        .modal-header,
+        .modal-footer {
+            border-color:
+                rgba(255,255,255,.07);
+        }
+
+        .modal-header .close {
+            color: #fff;
+
+            opacity: .7;
+        }
+
+        .modal-body {
+            color: #94a3b8;
+
+            font-size: 13px;
+        }
+
+        .btn-modal-cancel {
+            background:
+                rgba(255,255,255,.06);
+
+            color: #cbd5e1;
+
+            border:
+                1px solid rgba(255,255,255,.08);
+
+            border-radius: 9px;
+        }
+
+        .btn-modal-cancel:hover {
+            background:
+                rgba(255,255,255,.10);
+
+            color: #fff;
+        }
+
+        .btn-modal-logout {
+            background:
+                #dc3545;
+
+            color: #fff !important;
+
+            border: none;
+
+            border-radius: 9px;
+        }
+
+        /* =====================================================
+           ANIMATION
+        ===================================================== */
+
+        @keyframes fadeUp {
+
+            from {
+                opacity: 0;
+
+                transform:
+                    translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
+
+        }
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 768px) {
+
+            .topbar-modern {
+                height: 65px;
+            }
+
+            .search-modern {
+                display: none;
+            }
+
+            .page-header {
+                display: block;
+
+                margin-top: 20px;
+            }
+
+            .page-title {
+                font-size: 23px;
+            }
+
+            .form-body {
+                padding: 22px 18px;
+            }
+
+            .form-card-header {
+                padding:
+                    18px;
+            }
+
+            .form-actions {
+                flex-direction: column-reverse;
+            }
+
+            .btn-back,
+            .btn-save {
+                width: 100%;
+            }
+
+        }
+
+        @media (max-width: 576px) {
+
+            .container-fluid {
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+
+            .form-card {
+                border-radius: 16px;
+            }
+
+            .form-card-header {
+                align-items: flex-start;
+            }
+
+        }
+
     </style>
+
 </head>
+
 
 <body id="page-top">
 
-    <!-- Page Wrapper -->
-    <div id="wrapper">
+<div id="wrapper">
 
-        <!-- Sidebar -->
-        <ul class="navbar-nav sidebar sidebar-dark accordion border border-secondary-subtle border-start-0" id="accordionSidebar" style="background-color: #0F0F0F;">
 
-            <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="home.php">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fa-solid fa-crown fs-5"></i>
-                </div>
-                <div class="sidebar-brand-text mx-3">CV.Arifubila</div>
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <ul class="navbar-nav sidebar sidebar-dark accordion"
+        id="accordionSidebar">
+
+
+        <!-- BRAND -->
+
+        <a class="sidebar-brand d-flex align-items-center justify-content-center"
+           href="../home.php">
+
+            <div class="brand-icon">
+                <i class="fa-solid fa-car-side"></i>
+            </div>
+
+            <div class="sidebar-brand-text mx-3">
+                CV. ARIFUBILA
+            </div>
+
+        </a>
+
+
+        <hr class="sidebar-divider my-0">
+
+
+        <!-- DASHBOARD -->
+
+        <li class="nav-item">
+
+            <a class="nav-link"
+               href="../home.php">
+
+                <i class="fas fa-fw fa-house"></i>
+
+                <span>
+                    Dashboard
+                </span>
+
             </a>
 
-            <!-- Divider -->
-            <hr class="sidebar-divider my-0">
+        </li>
 
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
-                <a class="nav-link" href="home.php">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span>
-                </a>
-            </li>
 
-            <!-- Divider -->
-            <hr class="sidebar-divider">
+        <hr class="sidebar-divider">
 
-            <!-- Heading -->
-            <div class="sidebar-heading">Interface</div>
 
-            <!-- Nav Item - Data Kategori -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Data Kategori</span>
-                </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="py-2 collapse-inner rounded" style="background-color: #6F7B7F;">
-                        <h6 class="collapse-header">Data Kategori:</h6>
-                        <a class="collapse-item text-white" href="../mobil/mobil.php">Data Mobil</a>
-                        <a class="collapse-item text-white" href="../pelanggan/pelanggan.php">Data Pelanggan</a>
-                    </div>
-                </div>
-            </li>
-
-            <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link" href="../rental/rental.php">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Rental Mobil</span>
-                </a>
-            </li>
-            
-            <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
-
-            <!-- Sidebar Toggler (Sidebar) -->
-            <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
-            </div>
-        </ul>
-        <!-- End of Sidebar -->
-
-        <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column border border-start-0" style="background-color: #0F0F0F;">
-            <!-- Main Content -->
-            <div id="content">
-                <!-- Topbar -->
-                <nav class="navbar navbar-expand border-bottom topbar mb-4 static-top shadow" style="background-color: #0F0F0F;">
-                    <!-- Sidebar Toggle (Topbar) -->
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                        <i class="fa fa-bars"></i>
-                    </button>
-
-                    <!-- Topbar Search -->
-<!-- Topbar Search -->
-    <!-- Topbar Search -->
-    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search" action="cari_mobil.php" method="GET">
-        <div class="input-group">
-            <input type="text" name="keyword" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" required>
-            <div class="input-group-append">
-                <button class="btn btn-secondary" type="submit">
-                    <i class="fas fa-search fa-sm"></i>
-                </button>
-            </div>
+        <div class="sidebar-heading">
+            MANAGEMENT
         </div>
-    </form>
 
-                    <!-- Topbar Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-                        <li class="nav-item dropdown no-arrow d-sm-none">
-                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-search fa-fw"></i>
-                            </a>
-                            <!-- Dropdown - Messages -->
-                            <div class="dropdown-menu dropdown-menu-right p-3 shadow ano_trx_arifated--grow-in" aria-labelledby="searchDropdown">
-                                <form class="form-inline mr-auto w-100 navbar-search">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-primary" type="button">
-                                                <i class="fas fa-search fa-sm"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </li>
 
-                        <!-- Nav Item - Alerts -->
-                        <li class="nav-item dropdown no-arrow mx-1">
-                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-bell fa-fw text-white"></i>
-                                <span class="badge badge-danger badge-counter">3+</span>
-                            </a>
-                            <!-- Dropdown - Alerts -->
-                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow ano_trx_arifated--grow-in" aria-labelledby="alertsDropdown">
-                                <h6 class="dropdown-header bg-secondary">Alerts Center</h6>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="mr-3">
-                                        <div class="icon-circle bg-primary">
-                                            <i class="fas fa-file-alt text-white"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="small text-gray-500">December 12, 2019</div>
-                                        <span class="font-weight-bold">A new monthly report is ready to download!</span>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="mr-3">
-                                        <div class="icon-circle bg-success">
-                                            <i class="fas fa-donate text-white"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="small text-gray-500">December 7, 2019</div>
-                                        $290.29 has been deposited into your account!
-                                    </div>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="mr-3">
-                                        <div class="icon-circle bg-warning">
-                                            <i class="fas fa-exclamation-triangle text-white"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="small text-gray-500">December 2, 2019</div>
-                                        Spending Alert: We've noticed unusually high spending for your account.
-                                    </div>
-                                </a>
-                                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
-                            </div>
-                        </li>
+        <!-- DATA MASTER -->
 
-                        <div class="topbar-divider d-none d-sm-block"></div>
+        <li class="nav-item active">
 
-                        <!-- Nav Item - User Information -->
-                        <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-white small">Elon Musk</span>
-                                <img class="img-profile rounded-circle" src="../img/undraw_profile.svg">
-                            </a>
-                            <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow ano_trx_arifated--grow-in" aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> Profile
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i> Settings
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i> Activity Log
-                                </a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> Logout
-                                </a>
-                            </div>
-                        </li>
-                    </ul>
-                </nav>
-                <!-- End of Topbar -->
+            <a class="nav-link"
+               href="#"
+               data-toggle="collapse"
+               data-target="#collapseData"
+               aria-expanded="true"
+               aria-controls="collapseData">
 
-                <!-- Begin Page Content -->
-                <div class="container-fluid">
-                    <!-- Page Heading -->
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-white">Choose Your Vehicle</h1>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
-                            <i class="fas fa-download fa-sm text-white-50"></i> Generate Report
-                        </a>
-                    </div>
+                <i class="fas fa-fw fa-database"></i>
+
+                <span>
+                    Data Master
+                </span>
+
+            </a>
+
+
+            <div id="collapseData"
+                 class="collapse show"
+                 data-parent="#accordionSidebar">
+
+
+                <div class="py-2 collapse-inner rounded">
+
+
+                    <h6 class="collapse-header">
+                        KELOLA DATA
+                    </h6>
+
+
+                    <!-- DATA MOBIL ACTIVE -->
+
+                    <a class="collapse-item active-item"
+                       href="mobil.php">
+
+                        <i class="fas fa-car mr-2"></i>
+
+                        Data Mobil
+
+                    </a>
+
+
+                    <!-- DATA PELANGGAN -->
+
+                    <a class="collapse-item"
+                       href="../pelanggan/pelanggan.php">
+
+                        <i class="fas fa-users mr-2"></i>
+
+                        Data Pelanggan
+
+                    </a>
+
+
                 </div>
-                            
-         <!-- Card Car Content -->
-         <div class="container-fluid">
-                        <div class="mb-3" style="background: #222831; border-radius: 20px;">
-                            <div class="p-3" style="background-color: #31363F; border-radius: 15px 15px 0 0;">Tambah Data Mobil</div>
-                            <div class="card-body text-white">
-                                <form method="POST" action="insert_mobil.php">
-                                    <div class="form-row">
-                                        <div class="col-md-6 mb-3">
-                                            <label for="no_plat_arif" class="form-label">No Plat :</label>
-                                            <input type="text" name="no_plat_arif" class="form-control" id="no_plat_arif" placeholder="Masukan No Plat" required>
-                                        </div>
-                                        <div class="col-md-6 mb-3">
-                                            <label for="nama_mobil_arif" class="form-label">Nama Mobil :</label>
-                                            <select name="nama_mobil_arif" class="form-control" id="nama_mobil_arif" required>
-                                                <option value="">-- Pilih Nama Mobil --</option>
-                                                <option value="BMW M440 Coupe">BMW M440 Coupe</option>
-                                                <option value="Porsche 911">Porsche 911</option>
-                                                <option value="Mercedes-Benz G-Class">Mercedes-Benz G-Class</option>
-                                                <option value="Rolls-Royce Phantom">Rolls-Royce Phantom</option>
-                                                <option value="Toyota Supra">Toyota Supra</option>
-                                                <option value="Nissan GT-R">Nissan GT-R</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="col-md-6 mb-3">
-                                            <label for="brand_mobil_arif" class="form-label">Brand Mobil :</label>
-                                            <select name="brand_mobil_arif" class="form-control" id="brand_mobil_arif" required>
-                                                <option value="">-- Pilih Brand Mobil --</option>
-                                                <option value="BMW">BMW</option>
-                                                <option value="Porsche">Porsche</option>
-                                                <option value="Mercedes-Benz">Mercedes-Benz</option>
-                                                <option value="Rolls-Royce">Rolls-Royce</option>
-                                                <option value="Toyota">Toyota</option>
-                                                <option value="Nissan">Nissan</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-md-6 mb-3">
-                                            <label for="tipe_transmisi_arif" class="form-label">Tipe Transmisi :</label>
-                                            <select name="tipe_transmisi_arif" class="form-control" id="tipe_transmisi_arif" required>
-                                                <option value="">-- Pilih Tipe Transmisi --</option>
-                                                <option value="Automatic">Automatic</option>
-                                                <option value="Manual">Manual</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="col-md-12 mb-3">
-                                            <a href="mobil.php" class="btn btn-warning">Kembali</a>
-                                            <button type="submit" class="btn btn-primary">Simpan</button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
+
+            </div>
+
+        </li>
+
+
+        <!-- RENTAL -->
+
+        <li class="nav-item">
+
+            <a class="nav-link"
+               href="../rental/rental.php">
+
+                <i class="fas fa-fw fa-key"></i>
+
+                <span>
+                    Rental Mobil
+                </span>
+
+            </a>
+
+        </li>
+
+
+        <hr class="sidebar-divider d-none d-md-block">
+
+
+        <!-- SIDEBAR TOGGLE -->
+
+        <div class="text-center d-none d-md-inline">
+
+            <button
+                class="rounded-circle border-0"
+                id="sidebarToggle">
+            </button>
+
+        </div>
+
+
+    </ul>
+
+
+    <!-- =====================================================
+         CONTENT
+    ====================================================== -->
+
+    <div id="content-wrapper"
+         class="d-flex flex-column">
+
+
+        <div id="content">
+
+
+            <!-- =====================================================
+                 TOPBAR
+            ====================================================== -->
+
+            <nav class="navbar navbar-expand topbar topbar-modern mb-4 static-top shadow">
+
+
+                <!-- MOBILE SIDEBAR -->
+
+                <button
+                    id="sidebarToggleTop"
+                    class="btn btn-link d-md-none rounded-circle mr-3">
+
+                    <i class="fa fa-bars text-white"></i>
+
+                </button>
+
+
+                <!-- SEARCH -->
+
+                <form
+                    class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 search-modern"
+                    action="../cari_mobil.php"
+                    method="GET">
+
+                    <div class="input-group">
+
+                        <input
+                            type="text"
+                            name="keyword"
+                            class="form-control"
+                            placeholder="Cari data mobil..."
+                            required>
+
+                        <div class="input-group-append">
+
+                            <button
+                                class="btn"
+                                type="submit">
+
+                                <i class="fas fa-search"></i>
+
+                            </button>
+
                         </div>
+
                     </div>
 
+                </form>
+
+
+                <!-- NAVBAR RIGHT -->
+
+                <ul class="navbar-nav ml-auto">
+
+
+                    <!-- NOTIFICATION -->
+
+                    <li class="nav-item dropdown no-arrow mx-1">
+
+                        <a
+                            class="nav-link dropdown-toggle topbar-icon"
+                            href="#"
+                            data-toggle="dropdown">
+
+                            <i class="fas fa-bell text-white"></i>
+
+                            <span class="badge badge-danger badge-counter">
+                                3
+                            </span>
+
+                        </a>
+
+
+                        <div
+                            class="dropdown-list dropdown-menu dropdown-menu-right shadow">
+
+                            <h6 class="dropdown-header bg-primary">
+
+                                Notifikasi
+
+                            </h6>
+
+
+                            <a
+                                class="dropdown-item d-flex align-items-center"
+                                href="#">
+
+                                <i class="fas fa-car mr-2"
+                                   style="color:#60a5fa;"></i>
+
+                                Data mobil terbaru tersedia.
+
+                            </a>
+
+
+                            <a
+                                class="dropdown-item d-flex align-items-center"
+                                href="#">
+
+                                <i class="fas fa-key mr-2"
+                                   style="color:#4ade80;"></i>
+
+                                Rental baru ditambahkan.
+
+                            </a>
+
+
+                        </div>
+
+                    </li>
+
+
+                    <div class="topbar-divider d-none d-sm-block"></div>
+
+
+                    <!-- USER -->
+
+                    <li class="nav-item dropdown no-arrow">
+
+                        <a
+                            class="nav-link dropdown-toggle"
+                            href="#"
+                            data-toggle="dropdown">
+
+                            <span
+                                class="mr-2 d-none d-lg-inline profile-name small">
+
+                                Admin
+
+                            </span>
+
+
+                            <img
+                                class="img-profile rounded-circle"
+                                src="../img/undraw_profile.svg">
+
+                        </a>
+
+
+                        <div
+                            class="dropdown-menu dropdown-menu-right shadow">
+
+
+                            <a
+                                class="dropdown-item"
+                                href="#">
+
+                                <i class="fas fa-user fa-sm fa-fw mr-2"
+                                   style="color:#64748b;"></i>
+
+                                Profile
+
+                            </a>
+
+
+                            <a
+                                class="dropdown-item"
+                                href="#">
+
+                                <i class="fas fa-cog fa-sm fa-fw mr-2"
+                                   style="color:#64748b;"></i>
+
+                                Settings
+
+                            </a>
+
+
+                            <div class="dropdown-divider"></div>
+
+
+                            <a
+                                class="dropdown-item"
+                                href="#"
+                                data-toggle="modal"
+                                data-target="#logoutModal">
+
+                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2"
+                                   style="color:#64748b;"></i>
+
+                                Logout
+
+                            </a>
+
+
+                        </div>
+
+                    </li>
+
+
+                </ul>
+
+            </nav>
+
+
+            <!-- =====================================================
+                 MAIN CONTENT
+            ====================================================== -->
+
+            <div class="container-fluid">
+
+
+                <!-- PAGE HEADER -->
+
+                <div class="page-header">
+
+
+                    <div>
+
+                        <h1 class="page-title">
+                            Tambah Data Mobil
+                        </h1>
+
+                        <div class="page-subtitle">
+                            Tambahkan kendaraan baru ke dalam daftar rental.
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- =================================================
+                     FORM CARD
+                ================================================== -->
+
+                <div class="form-card">
+
+
+                    <!-- HEADER -->
+
+                    <div class="form-card-header">
+
+
+                        <div class="form-card-header-icon">
+
+                            <i class="fas fa-car"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <h5 class="form-card-title">
+                                Informasi Kendaraan
+                            </h5>
+
+                            <div class="form-card-subtitle">
+                                Lengkapi informasi kendaraan dengan benar.
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <!-- FORM BODY -->
+
+                    <div class="form-body">
+
+
+                        <form
+                            method="POST"
+                            action="insert_mobil.php">
+
+
+                            <div class="form-section-title">
+                                DATA MOBIL
+                            </div>
+
+
+                            <!-- ROW 1 -->
+
+                            <div class="row">
+
+
+                                <!-- NO PLAT -->
+
+                                <div class="col-md-6">
+
+                                    <div class="form-group-modern">
+
+                                        <label
+                                            for="no_plat_arif"
+                                            class="form-label-modern">
+
+                                            <i class="fas fa-id-card"></i>
+
+                                            No Plat
+
+                                        </label>
+
+
+                                        <input
+                                            type="text"
+                                            name="no_plat_arif"
+                                            class="form-control-modern"
+                                            id="no_plat_arif"
+                                            placeholder="Contoh: Z 1234 AB"
+                                            required>
+
+                                    </div>
+
+                                </div>
+
+
+                                <!-- NAMA MOBIL -->
+
+                                <div class="col-md-6">
+
+                                    <div class="form-group-modern">
+
+                                        <label
+                                            for="nama_mobil_arif"
+                                            class="form-label-modern">
+
+                                            <i class="fas fa-car-side"></i>
+
+                                            Nama Mobil
+
+                                        </label>
+
+
+                                        <select
+                                            name="nama_mobil_arif"
+                                            class="form-control-modern"
+                                            id="nama_mobil_arif"
+                                            required>
+
+                                            <option value="">
+                                                -- Pilih Nama Mobil --
+                                            </option>
+
+                                            <option value="BMW M440 Coupe">
+                                                BMW M440 Coupe
+                                            </option>
+
+                                            <option value="Porsche 911">
+                                                Porsche 911
+                                            </option>
+
+                                            <option value="Mercedes-Benz G-Class">
+                                                Mercedes-Benz G-Class
+                                            </option>
+
+                                            <option value="Rolls-Royce Phantom">
+                                                Rolls-Royce Phantom
+                                            </option>
+
+                                            <option value="Toyota Supra">
+                                                Toyota Supra
+                                            </option>
+
+                                            <option value="Nissan GT-R">
+                                                Nissan GT-R
+                                            </option>
+
+                                        </select>
+
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+
+
+                            <!-- ROW 2 -->
+
+                            <div class="row">
+
+
+                                <!-- BRAND -->
+
+                                <div class="col-md-6">
+
+                                    <div class="form-group-modern">
+
+                                        <label
+                                            for="brand_mobil_arif"
+                                            class="form-label-modern">
+
+                                            <i class="fas fa-tag"></i>
+
+                                            Brand Mobil
+
+                                        </label>
+
+
+                                        <select
+                                            name="brand_mobil_arif"
+                                            class="form-control-modern"
+                                            id="brand_mobil_arif"
+                                            required>
+
+                                            <option value="">
+                                                -- Pilih Brand Mobil --
+                                            </option>
+
+                                            <option value="BMW">
+                                                BMW
+                                            </option>
+
+                                            <option value="Porsche">
+                                                Porsche
+                                            </option>
+
+                                            <option value="Mercedes-Benz">
+                                                Mercedes-Benz
+                                            </option>
+
+                                            <option value="Rolls-Royce">
+                                                Rolls-Royce
+                                            </option>
+
+                                            <option value="Toyota">
+                                                Toyota
+                                            </option>
+
+                                            <option value="Nissan">
+                                                Nissan
+                                            </option>
+
+                                        </select>
+
+                                    </div>
+
+                                </div>
+
+
+                                <!-- TRANSMISI -->
+
+                                <div class="col-md-6">
+
+                                    <div class="form-group-modern">
+
+                                        <label
+                                            for="tipe_transmisi_arif"
+                                            class="form-label-modern">
+
+                                            <i class="fas fa-gears"></i>
+
+                                            Tipe Transmisi
+
+                                        </label>
+
+
+                                        <select
+                                            name="tipe_transmisi_arif"
+                                            class="form-control-modern"
+                                            id="tipe_transmisi_arif"
+                                            required>
+
+                                            <option value="">
+                                                -- Pilih Tipe Transmisi --
+                                            </option>
+
+                                            <option value="Automatic">
+                                                Automatic
+                                            </option>
+
+                                            <option value="Manual">
+                                                Manual
+                                            </option>
+
+                                        </select>
+
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+
+
+                            <!-- ACTION -->
+
+                            <div class="form-actions">
+
+
+                                <a
+                                    href="mobil.php"
+                                    class="btn-back">
+
+                                    <i class="fas fa-arrow-left"></i>
+
+                                    Kembali
+
+                                </a>
+
+
+                                <button
+                                    type="submit"
+                                    class="btn-save">
+
+                                    <i class="fas fa-save"></i>
+
+                                    Simpan Mobil
+
+                                </button>
+
+
+                            </div>
+
+
+                        </form>
+
+
+                    </div>
+
+
+                </div>
+
+
             </div>
+
+
         </div>
+
+
     </div>
 
-    <script>
-        function showDeleteModal(url) {
-            // Set URL untuk konfirmasi hapus
-            document.getElementById('confirmDelete').setAttribute('href', url);
 
-            // Tampilkan modal
-            var deleteModal = new bootstrap.Modal(document.getElementById('deleteModal'));
-            deleteModal.show();
-        }
-    </script>
-
- <!-- Logout Modal-->
- <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="login.php">Logout</a>
-            </div>
-        </div>
-    </div>
 </div>
-<!-- Bootstrap core JavaScript-->
+
+
+<!-- =====================================================
+     LOGOUT MODAL
+====================================================== -->
+
+<div
+    class="modal fade"
+    id="logoutModal"
+    tabindex="-1"
+    role="dialog"
+    aria-hidden="true">
+
+
+    <div
+        class="modal-dialog modal-dialog-centered"
+        role="document">
+
+
+        <div class="modal-content">
+
+
+            <div class="modal-header">
+
+                <h5 class="modal-title">
+
+                    <i class="fas fa-right-from-bracket mr-2"
+                       style="color:#60a5fa;"></i>
+
+                    Konfirmasi Logout
+
+                </h5>
+
+
+                <button
+                    class="close"
+                    type="button"
+                    data-dismiss="modal">
+
+                    <span>
+                        &times;
+                    </span>
+
+                </button>
+
+            </div>
+
+
+            <div class="modal-body">
+
+                Apakah Anda yakin ingin keluar dari sistem?
+
+            </div>
+
+
+            <div class="modal-footer">
+
+
+                <button
+                    class="btn btn-modal-cancel"
+                    type="button"
+                    data-dismiss="modal">
+
+                    Batal
+
+                </button>
+
+
+                <a
+                    class="btn btn-modal-logout"
+                    href="../login.php">
+
+                    <i class="fas fa-sign-out-alt mr-1"></i>
+
+                    Logout
+
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+
 <script src="../vendor/jquery/jquery.min.js"></script>
-    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Core plugin JavaScript-->
-    <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Custom scripts for all pages-->
-    <script src="../js/sb-admin-2.min.js"></script>
+<script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
 
-    <!-- Page level plugins -->
-    <script src="../vendor/chart.js/Chart.min.js"></script>
+<script src="../js/sb-admin-2.min.js"></script>
 
-    <!-- Page level custom scripts -->
-    <script src="../js/demo/chart-area-demo.js"></script>
-    <script src="../js/demo/chart-pie-demo.js"></script>
 
 </body>
 
