@@ -1,313 +1,2154 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<html lang="id">
 
-    <title>CV.Rental Mobil Arifubila</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-    <link href="../css/sb-admin-2.css" rel="stylesheet">
+<head>
+
+    <meta charset="utf-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta name="description"
+          content="Sistem Rental Mobil CV.Arifubila">
+
+    <meta name="author"
+          content="CV.Arifubila">
+
+    <title>Edit Rental | CV.Arifubila</title>
+
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+
+    <!-- SB Admin 2 -->
+    <link href="../css/sb-admin-2.css"
+          rel="stylesheet">
+
 
     <style>
-        .custom-btn {
-            background-color: #6F7B7F;
-            color: #ffffff;
-            transition: background-color 0.3s, color 0.3s;
+
+        /* ========================================
+           GLOBAL
+        ======================================== */
+
+        :root {
+
+            --bg: #f5f7fb;
+
+            --surface: #ffffff;
+
+            --surface-soft: #f8fafc;
+
+            --text: #172033;
+
+            --muted: #7b8496;
+
+            --primary: #4f46e5;
+
+            --primary-dark: #4338ca;
+
+            --primary-soft: #eef2ff;
+
+            --border: #e7eaf0;
+
+            --sidebar: #111827;
+
         }
-        .custom-btn:hover {
-            background-color: #AFAEAE;
-            color: #ffffff;
+
+
+        * {
+            box-sizing: border-box;
         }
+
+
+        body {
+
+            font-family: "Inter", sans-serif;
+
+            background: var(--bg) !important;
+
+            color: var(--text);
+
+        }
+
+
+        #wrapper {
+
+            min-height: 100vh;
+
+        }
+
+
+
+        /* ========================================
+           SIDEBAR
+        ======================================== */
+
+        #accordionSidebar {
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #111827 0%,
+                    #1f2937 100%
+                ) !important;
+
+            border: 0 !important;
+
+            box-shadow:
+                8px 0 30px rgba(15, 23, 42, .08);
+
+        }
+
+
+        .sidebar-brand {
+
+            height: 76px;
+
+            font-weight: 800;
+
+            letter-spacing: -.3px;
+
+        }
+
+
+        .sidebar-brand-icon {
+
+            transform: none !important;
+
+            color: #a5b4fc;
+
+        }
+
+
+        .sidebar .nav-item .nav-link {
+
+            margin: 5px 12px;
+
+            padding: 13px 15px;
+
+            border-radius: 12px;
+
+            color: #cbd5e1;
+
+            transition: .2s ease;
+
+        }
+
+
+        .sidebar .nav-item .nav-link:hover,
+
+        .sidebar .nav-item.active .nav-link {
+
+            background:
+                rgba(255, 255, 255, .09);
+
+            color: #fff;
+
+        }
+
+
+        .sidebar .nav-item .nav-link i {
+
+            color: #a5b4fc;
+
+        }
+
+
+        .sidebar-heading {
+
+            color: #64748b !important;
+
+            font-size: 10px;
+
+            letter-spacing: 1.3px;
+
+            font-weight: 800;
+
+            padding-left: 20px;
+
+        }
+
+
+        .collapse-inner {
+
+            background: #273449 !important;
+
+            border:
+                1px solid rgba(255,255,255,.05);
+
+        }
+
+
+        .collapse-item {
+
+            border-radius: 8px;
+
+        }
+
+
+        .collapse-item:hover {
+
+            background:
+                rgba(255,255,255,.08);
+
+        }
+
+
+
+        /* ========================================
+           CONTENT
+        ======================================== */
+
+        #content-wrapper {
+
+            background:
+                var(--bg) !important;
+
+            border: 0 !important;
+
+        }
+
+
+
+        /* ========================================
+           TOPBAR
+        ======================================== */
+
+        .topbar {
+
+            height: 76px;
+
+            background:
+                rgba(255,255,255,.94) !important;
+
+            border: 0 !important;
+
+            box-shadow:
+                0 4px 20px rgba(15,23,42,.05) !important;
+
+            backdrop-filter:
+                blur(10px);
+
+        }
+
+
+        .navbar-search .input-group {
+
+            width: 330px;
+
+        }
+
+
+        .navbar-search .form-control {
+
+            height: 42px;
+
+            border:
+                1px solid var(--border) !important;
+
+            border-radius:
+                12px 0 0 12px !important;
+
+            background:
+                #f8fafc !important;
+
+            color: var(--text);
+
+        }
+
+
+        .navbar-search .form-control:focus {
+
+            box-shadow:
+                0 0 0 4px
+                rgba(79,70,229,.08);
+
+        }
+
+
+        .navbar-search .btn {
+
+            border-radius:
+                0 12px 12px 0;
+
+            background:
+                var(--primary);
+
+            border-color:
+                var(--primary);
+
+        }
+
+
+        .topbar .nav-link {
+
+            color: #64748b !important;
+
+        }
+
+
+        .topbar .nav-link:hover {
+
+            color:
+                var(--primary) !important;
+
+        }
+
+
+        .profile-name {
+
+            color:
+                #334155 !important;
+
+            font-weight:
+                600;
+
+        }
+
+
+        .img-profile {
+
+            border:
+                2px solid #e0e7ff;
+
+        }
+
+
+
+        /* ========================================
+           PAGE HEADER
+        ======================================== */
+
+        .page-header {
+
+            padding:
+                8px 0 22px;
+
+        }
+
+
+        .eyebrow {
+
+            color:
+                var(--primary);
+
+            font-size:
+                11px;
+
+            font-weight:
+                800;
+
+            letter-spacing:
+                1.3px;
+
+            text-transform:
+                uppercase;
+
+            margin-bottom:
+                6px;
+
+        }
+
+
+        .page-title {
+
+            font-size:
+                28px;
+
+            font-weight:
+                800;
+
+            letter-spacing:
+                -.8px;
+
+            margin:
+                0;
+
+            color:
+                var(--text);
+
+        }
+
+
+        .page-subtitle {
+
+            color:
+                var(--muted);
+
+            margin:
+                7px 0 0;
+
+            font-size:
+                14px;
+
+        }
+
+
+
+        /* ========================================
+           RENTAL CARD
+        ======================================== */
+
+        .rental-card {
+
+            background:
+                var(--surface);
+
+            border:
+                1px solid var(--border);
+
+            border-radius:
+                20px;
+
+            box-shadow:
+                0 12px 35px
+                rgba(15,23,42,.06);
+
+            overflow:
+                hidden;
+
+            margin-bottom:
+                35px;
+
+        }
+
+
+        .card-header-modern {
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            gap:
+                14px;
+
+            padding:
+                22px 26px;
+
+            border-bottom:
+                1px solid var(--border);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffffff 0%,
+                    #f8faff 100%
+                );
+
+        }
+
+
+        .header-icon {
+
+            width:
+                46px;
+
+            height:
+                46px;
+
+            min-width:
+                46px;
+
+            border-radius:
+                14px;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            background:
+                var(--primary-soft);
+
+            color:
+                var(--primary);
+
+            font-size:
+                18px;
+
+        }
+
+
+        .card-header-modern h2 {
+
+            font-size:
+                17px;
+
+            font-weight:
+                800;
+
+            margin:
+                0;
+
+            color:
+                var(--text);
+
+        }
+
+
+        .card-header-modern p {
+
+            margin:
+                4px 0 0;
+
+            color:
+                var(--muted);
+
+            font-size:
+                12px;
+
+        }
+
+
+        .card-body-modern {
+
+            padding:
+                28px;
+
+        }
+
+
+
+        /* ========================================
+           FORM SECTION
+        ======================================== */
+
+        .section-label {
+
+            font-size:
+                11px;
+
+            font-weight:
+                800;
+
+            color:
+                #94a3b8;
+
+            text-transform:
+                uppercase;
+
+            letter-spacing:
+                1px;
+
+            margin:
+                4px 0 15px;
+
+        }
+
+
+        .form-group-modern {
+
+            margin-bottom:
+                20px;
+
+        }
+
+
+        .form-label-modern {
+
+            display:
+                block;
+
+            margin-bottom:
+                8px;
+
+            font-size:
+                13px;
+
+            font-weight:
+                700;
+
+            color:
+                #374151;
+
+        }
+
+
+        .input-wrap {
+
+            position:
+                relative;
+
+        }
+
+
+        .input-wrap > i {
+
+            position:
+                absolute;
+
+            left:
+                15px;
+
+            top:
+                50%;
+
+            transform:
+                translateY(-50%);
+
+            color:
+                #9ca3af;
+
+            z-index:
+                2;
+
+            pointer-events:
+                none;
+
+        }
+
+
+        .form-control-modern,
+
+        .form-select-modern {
+
+            width:
+                100%;
+
+            height:
+                48px;
+
+            border:
+                1px solid #e5e7eb;
+
+            border-radius:
+                12px;
+
+            background:
+                #f9fafb;
+
+            color:
+                #1f2937;
+
+            padding:
+                0 15px;
+
+            outline:
+                none;
+
+            transition:
+                .2s ease;
+
+        }
+
+
+        .input-wrap
+        .form-control-modern,
+
+        .input-wrap
+        .form-select-modern {
+
+            padding-left:
+                42px;
+
+        }
+
+
+        .form-control-modern:focus,
+
+        .form-select-modern:focus {
+
+            border-color:
+                #818cf8;
+
+            background:
+                #fff;
+
+            box-shadow:
+                0 0 0 4px
+                rgba(79,70,229,.10);
+
+        }
+
+
+        .form-control-modern[readonly] {
+
+            background:
+                #f1f5f9;
+
+            color:
+                #64748b;
+
+            cursor:
+                not-allowed;
+
+        }
+
+
+        .form-select-modern {
+
+            cursor:
+                pointer;
+
+        }
+
+
+
+        /* ========================================
+           TOTAL BAYAR
+        ======================================== */
+
+        .total-box {
+
+            position:
+                relative;
+
+        }
+
+
+        .total-box
+        .form-control-modern {
+
+            height:
+                56px;
+
+            font-size:
+                20px;
+
+            font-weight:
+                800;
+
+            color:
+                var(--primary);
+
+            background:
+                #eef2ff;
+
+            border-color:
+                #c7d2fe;
+
+        }
+
+
+        .total-box
+        .input-wrap > i {
+
+            color:
+                var(--primary);
+
+        }
+
+
+
+        /* ========================================
+           BUTTON
+        ======================================== */
+
+        .action-row {
+
+            display:
+                flex;
+
+            justify-content:
+                flex-end;
+
+            gap:
+                10px;
+
+            padding-top:
+                20px;
+
+            margin-top:
+                8px;
+
+            border-top:
+                1px solid var(--border);
+
+        }
+
+
+        .btn-modern {
+
+            min-height:
+                45px;
+
+            padding:
+                0 20px;
+
+            border:
+                0;
+
+            border-radius:
+                11px;
+
+            font-size:
+                13px;
+
+            font-weight:
+                700;
+
+            transition:
+                .2s ease;
+
+        }
+
+
+        .btn-back {
+
+            background:
+                #f1f5f9;
+
+            color:
+                #475569;
+
+        }
+
+
+        .btn-back:hover {
+
+            background:
+                #e2e8f0;
+
+            color:
+                #1e293b;
+
+            text-decoration:
+                none;
+
+        }
+
+
+        .btn-update {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--primary),
+                    var(--primary-dark)
+                );
+
+            color:
+                #fff;
+
+            box-shadow:
+                0 7px 18px
+                rgba(79,70,229,.22);
+
+        }
+
+
+        .btn-update:hover {
+
+            transform:
+                translateY(-1px);
+
+            color:
+                #fff;
+
+            box-shadow:
+                0 10px 22px
+                rgba(79,70,229,.30);
+
+        }
+
+
+
+        /* ========================================
+           MODAL
+        ======================================== */
+
+        .modal-content {
+
+            border:
+                0;
+
+            border-radius:
+                18px;
+
+        }
+
+
+        .modal-header {
+
+            border-bottom:
+                1px solid var(--border);
+
+        }
+
+
+        .modal-footer {
+
+            border-top:
+                1px solid var(--border);
+
+        }
+
+
+
+        /* ========================================
+           RESPONSIVE
+        ======================================== */
+
+        @media (max-width: 767px) {
+
+            .topbar {
+
+                height:
+                    68px;
+
+            }
+
+
+            .navbar-search {
+
+                display:
+                    none !important;
+
+            }
+
+
+            .page-title {
+
+                font-size:
+                    23px;
+
+            }
+
+
+            .card-body-modern {
+
+                padding:
+                    20px;
+
+            }
+
+
+            .card-header-modern {
+
+                padding:
+                    18px 20px;
+
+            }
+
+
+            .action-row {
+
+                justify-content:
+                    stretch;
+
+            }
+
+
+            .btn-modern {
+
+                flex:
+                    1;
+
+            }
+
+        }
+
     </style>
+
 </head>
+
 
 <body id="page-top">
 
-    <div id="wrapper">
 
-        <ul class="navbar-nav sidebar sidebar-dark accordion border border-secondary-subtle border-start-0" id="accordionSidebar" style="background-color: #0F0F0F;">
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="home.php">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fa-solid fa-crown fs-5"></i>
-                </div>
-                <div class="sidebar-brand-text mx-3">CV.Arifubila</div>
+<div id="wrapper">
+
+
+    <!-- ==========================================
+         SIDEBAR
+    =========================================== -->
+
+    <ul class="navbar-nav sidebar sidebar-dark accordion"
+        id="accordionSidebar">
+
+
+        <!-- BRAND -->
+
+        <a class="sidebar-brand d-flex align-items-center justify-content-center"
+           href="home.php">
+
+            <div class="sidebar-brand-icon">
+
+                <i class="fa-solid fa-car-side"></i>
+
+            </div>
+
+
+            <div class="sidebar-brand-text mx-3">
+
+                CV.Arifubila
+
+            </div>
+
+        </a>
+
+
+        <hr class="sidebar-divider my-0">
+
+
+        <!-- DASHBOARD -->
+
+        <li class="nav-item">
+
+            <a class="nav-link"
+               href="home.php">
+
+                <i class="fas fa-fw fa-chart-pie"></i>
+
+                <span>
+                    Dashboard
+                </span>
+
             </a>
-            <hr class="sidebar-divider my-0">
-            <li class="nav-item active">
-                <a class="nav-link" href="home.php">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span>
-                </a>
-            </li>
-            <hr class="sidebar-divider">
-            <div class="sidebar-heading">Interface</div>
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Data Kategori</span>
-                </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="py-2 collapse-inner rounded" style="background-color: #6F7B7F;">
-                        <h6 class="collapse-header">Data Kategori:</h6>
-                        <a class="collapse-item text-white" href="../mobil/mobil.php">Data Mobil</a>
-                        <a class="collapse-item text-white" href="../pelanggan/pelanggan.php">Data Pelanggan</a>
-                    </div>
+
+        </li>
+
+
+        <hr class="sidebar-divider">
+
+
+        <div class="sidebar-heading">
+
+            MENU UTAMA
+
+        </div>
+
+
+        <!-- DATA MASTER -->
+
+        <li class="nav-item">
+
+            <a class="nav-link collapsed"
+               href="#"
+               data-toggle="collapse"
+               data-target="#collapseTwo"
+               aria-expanded="false"
+               aria-controls="collapseTwo">
+
+                <i class="fas fa-fw fa-database"></i>
+
+                <span>
+                    Data Master
+                </span>
+
+            </a>
+
+
+            <div id="collapseTwo"
+                 class="collapse"
+                 data-parent="#accordionSidebar">
+
+
+                <div class="py-2 collapse-inner rounded">
+
+
+                    <h6 class="collapse-header">
+
+                        Kelola Data
+
+                    </h6>
+
+
+                    <a class="collapse-item text-white"
+                       href="../mobil/mobil.php">
+
+                        <i class="fas fa-car mr-2"></i>
+
+                        Data Mobil
+
+                    </a>
+
+
+                    <a class="collapse-item text-white"
+                       href="../pelanggan/pelanggan.php">
+
+                        <i class="fas fa-users mr-2"></i>
+
+                        Data Pelanggan
+
+                    </a>
+
+
                 </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="rental.php">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Rental Mobil</span>
-                </a>
-            </li>
-            <hr class="sidebar-divider d-none d-md-block">
-            <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+
             </div>
-        </ul>
 
-        <div id="content-wrapper" class="d-flex flex-column border border-start-0" style="background-color: #0F0F0F;">
-            <div id="content">
-                <nav class="navbar navbar-expand border-bottom topbar mb-4 static-top shadow" style="background-color: #0F0F0F;">
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                        <i class="fa fa-bars"></i>
-                    </button>
-                    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search" action="cari_rental.php" method="GET">
-                        <div class="input-group">
-                            <input type="text" name="keyword" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" required>
-                            <div class="input-group-append">
-                                <button class="btn btn-secondary" type="submit">
-                                    <i class="fas fa-search fa-sm"></i>
-                                </button>
-                            </div>
+        </li>
+
+
+        <!-- RENTAL -->
+
+        <li class="nav-item active">
+
+            <a class="nav-link"
+               href="rental.php">
+
+                <i class="fas fa-fw fa-calendar-check"></i>
+
+                <span>
+                    Rental Mobil
+                </span>
+
+            </a>
+
+        </li>
+
+
+        <hr class="sidebar-divider d-none d-md-block">
+
+
+        <div class="text-center d-none d-md-inline">
+
+            <button class="rounded-circle border-0"
+                    id="sidebarToggle">
+
+            </button>
+
+        </div>
+
+
+    </ul>
+
+
+
+    <!-- ==========================================
+         CONTENT WRAPPER
+    =========================================== -->
+
+    <div id="content-wrapper"
+         class="d-flex flex-column">
+
+
+        <div id="content">
+
+
+            <!-- ==========================================
+                 TOPBAR
+            =========================================== -->
+
+            <nav class="navbar navbar-expand topbar mb-4 static-top">
+
+
+                <!-- MOBILE SIDEBAR BUTTON -->
+
+                <button id="sidebarToggleTop"
+                        class="btn btn-link d-md-none rounded-circle mr-3">
+
+                    <i class="fa fa-bars"></i>
+
+                </button>
+
+
+                <!-- SEARCH -->
+
+                <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 navbar-search"
+                      action="cari_rental.php"
+                      method="GET">
+
+
+                    <div class="input-group">
+
+
+                        <input type="text"
+                               name="keyword"
+                               class="form-control small"
+                               placeholder="Cari transaksi rental..."
+                               aria-label="Search"
+                               required>
+
+
+                        <div class="input-group-append">
+
+
+                            <button class="btn"
+                                    type="submit">
+
+                                <i class="fas fa-search fa-sm text-white"></i>
+
+                            </button>
+
+
                         </div>
-                    </form>
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item dropdown no-arrow d-sm-none">
-                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-search fa-fw"></i>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right p-3 shadow ano_trx_arifated--grow-in" aria-labelledby="searchDropdown">
-                                <form class="form-inline mr-auto w-100 navbar-search">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-primary" type="button">
-                                                <i class="fas fa-search fa-sm"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown no-arrow mx-1">
-                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-bell fa-fw text-white"></i>
-                                <span class="badge badge-danger badge-counter">3+</span>
-                            </a>
-                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow ano_trx_arifated--grow-in" aria-labelledby="alertsDropdown">
-                                <h6 class="dropdown-header bg-secondary">Alerts Center</h6>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="mr-3">
-                                        <div class="icon-circle bg-primary">
-                                            <i class="fas fa-file-alt text-white"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="small text-gray-500">December 12, 2019</div>
-                                        <span class="font-weight-bold">A new monthly report is ready to download!</span>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="mr-3">
-                                        <div class="icon-circle bg-success">
-                                            <i class="fas fa-donate text-white"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="small text-gray-500">December 7, 2019</div>
-                                        $290.29 has been deposited into your account!
-                                    </div>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="mr-3">
-                                        <div class="icon-circle bg-warning">
-                                            <i class="fas fa-exclamation-triangle text-white"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="small text-gray-500">December 2, 2019</div>
-                                        Spending Alert: We've noticed unusually high spending for your account.
-                                    </div>
-                                </a>
-                                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
-                            </div>
-                        </li>
-                        <div class="topbar-divider d-none d-sm-block"></div>
-                        <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-white small">Elon Musk</span>
-                                <img class="img-profile rounded-circle" src="../img/undraw_profile.svg">
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right shadow ano_trx_arifated--grow-in" aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> Profile
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i> Settings
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i> Activity Log
-                                </a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> Logout
-                                </a>
-                            </div>
-                        </li>
-                    </ul>
-                </nav>
 
-                <div class="container-fluid">
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-white">Edit Rental Data</h1>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
-                            <i class="fas fa-download fa-sm text-white-50"></i> Generate Report
+
+                    </div>
+
+
+                </form>
+
+
+
+                <!-- NAVBAR RIGHT -->
+
+                <ul class="navbar-nav ml-auto">
+
+
+                    <!-- NOTIFICATION -->
+
+                    <li class="nav-item dropdown no-arrow mx-1">
+
+
+                        <a class="nav-link dropdown-toggle"
+                           href="#"
+                           id="alertsDropdown"
+                           role="button"
+                           data-toggle="dropdown"
+                           aria-haspopup="true"
+                           aria-expanded="false">
+
+
+                            <i class="fas fa-bell fa-fw"></i>
+
+
+                            <span class="badge badge-danger badge-counter">
+
+                                3+
+
+                            </span>
+
+
                         </a>
-                    </div>
-                </div>
 
-                <div class="container-fluid">
-                    <div class="mb-3" style="background: #222831; border-radius: 20px;">
-                        <div class="p-3" style="background-color: #31363F; border-radius: 15px 15px 0 0;">Edit Data Rental</div>
-                        <div class="card-body text-white">
-                            <form method="POST" action="update_rental.php">
-                                <?php
-                                // Fetch existing rental data from the database
-                                include "../koneksi.php";
-                                $no_trx_arif = $_GET['no_trx_arif']; // Assuming the ID of the rental is passed in the URL
-                                $query = mysqli_query($koneksi, "SELECT * FROM tbl_rental_arif WHERE no_trx_arif='$no_trx_arif'");
-                                $data = mysqli_fetch_array($query);
-                                ?>
-                                <div class="form-row">
-                                    <div class="col-md-6 mb-3">
-                                        <label for="no_trx_arif" class="form-label">No Trx :</label>
-                                        <input type="text" name="no_trx_arif" class="form-control" id="no_trx_arif" value="<?php echo $data['no_trx_arif']; ?>" readonly>
+
+                        <div class="dropdown-list dropdown-menu dropdown-menu-right shadow"
+                             aria-labelledby="alertsDropdown">
+
+
+                            <h6 class="dropdown-header">
+
+                                Notifikasi
+
+                            </h6>
+
+
+                            <a class="dropdown-item d-flex align-items-center"
+                               href="#">
+
+
+                                <div class="mr-3">
+
+                                    <div class="icon-circle bg-primary">
+
+                                        <i class="fas fa-car text-white"></i>
+
                                     </div>
-                                    <div class="col-md-6 mb-3">
-                                        <label for="tgl_rental_arif" class="form-label">Tanggal Ambil :</label>
-                                        <input type="date" name="tgl_rental_arif" class="form-control" id="tgl_rental_arif" value="<?php echo $data['tgl_rental_arif']; ?>" required>
-                                    </div>
+
                                 </div>
-                                <div class="form-row">
-                                    <div class="col-md-6 mb-3">
-                                        <label for="pelanggan_arif" class="form-label">Pelanggan :</label>
-                                        <select name="nik_ktp_arif" class="form-control">
-                                            <option value="">-- Pilih Pelanggan --</option>
-                                            <?php
-                                            $tampil = mysqli_query($koneksi, "SELECT * FROM tbl_pelanggan_arif");
-                                            while ($pelanggan = mysqli_fetch_array($tampil)) {
-                                                $selected = ($pelanggan['nik_ktp_arif'] == $data['nik_ktp_arif']) ? "selected" : "";
-                                                echo "<option value='{$pelanggan['nama_arif']}' $selected>{$pelanggan['nik_ktp_arif']} - {$pelanggan['nama_arif']}</option>";
-                                            }
-                                            ?>
-                                        </select>
+
+
+                                <div>
+
+                                    <div class="small text-gray-500">
+
+                                        Hari ini
+
                                     </div>
-                                    <div class="col-md-6 mb-3">
-                                        <label for="jam_rental_arif" class="form-label">Jam Ambil:</label>
-                                        <input type="time" name="jam_rental_arif" class="form-control" id="jam_rental_arif" value="<?php echo $data['jam_rental_arif']; ?>" required>
-                                    </div>
+
+
+                                    <span class="font-weight-bold">
+
+                                        Data rental tersedia.
+
+                                    </span>
+
                                 </div>
-                                <div class="form-row">
-                                    <div class="col-md-6 mb-3">
-                                        <label for="nama_mobil_arif" class="form-label">Mobil :</label>
-                                        <select name="no_plat_arif" class="form-control">
-                                            <option value="">-- Pilih Mobil --</option>
-                                            <?php
-                                            $tampilMobil = mysqli_query($koneksi, "SELECT * FROM tbl_mobil_arif");
-                                            while ($mobil = mysqli_fetch_array($tampilMobil)) {
-                                                $selected = ($mobil['no_plat_arif'] == $data['no_plat_arif']) ? "selected" : "";
-                                                echo "<option value='{$mobil['brand_mobil_arif']}' $selected>{$mobil['no_plat_arif']} - {$mobil['brand_mobil_arif']}</option>";
-                                            }
-                                            ?>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <label for="lama_arif">Lama Rental :</label>
-                                        <input type="number" class="form-control" id="lama_arif" name="lama_arif" value="<?php echo $data['lama_arif']; ?>" placeholder="Masukkan Lama Rental" required oninput="calculateTotal()">
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="col-md-6 mb-3">
-                                        <label for="harga_arif">Harga Rental :</label>
-                                        <input type="number" class="form-control" id="harga_arif" name="harga_arif" value="<?php echo $data['harga_arif']; ?>" placeholder="Masukkan Harga Rental" required oninput="calculateTotal()">
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <label for="total_bayar_arif">Total Bayar :</label>
-                                        <input type="number" class="form-control" id="total_bayar_arif" name="total_bayar_arif" value="<?php echo $data['total_bayar_arif']; ?>" placeholder="Total Bayar" readonly>
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="col-md-12 mb-3">
-                                        <a href="rental.php" class="btn btn-warning">Kembali</a>
-                                        <button type="submit" class="btn btn-primary">Perbarui</button>
-                                    </div>
-                                </div>
-                            </form>
+
+
+                            </a>
+
+
+                            <a class="dropdown-item text-center small text-gray-500"
+                               href="#">
+
+                                Lihat semua
+
+                            </a>
+
+
                         </div>
+
+
+                    </li>
+
+
+                    <div class="topbar-divider d-none d-sm-block"></div>
+
+
+                    <!-- USER -->
+
+                    <li class="nav-item dropdown no-arrow">
+
+
+                        <a class="nav-link dropdown-toggle"
+                           href="#"
+                           id="userDropdown"
+                           role="button"
+                           data-toggle="dropdown"
+                           aria-haspopup="true"
+                           aria-expanded="false">
+
+
+                            <span class="mr-2 d-none d-lg-inline small profile-name">
+
+                                Admin
+
+                            </span>
+
+
+                            <img class="img-profile rounded-circle"
+                                 src="../img/undraw_profile.svg">
+
+
+                        </a>
+
+
+                        <div class="dropdown-menu dropdown-menu-right shadow"
+                             aria-labelledby="userDropdown">
+
+
+                            <a class="dropdown-item"
+                               href="#">
+
+                                <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+
+                                Profil
+
+                            </a>
+
+
+                            <a class="dropdown-item"
+                               href="#">
+
+                                <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+
+                                Pengaturan
+
+                            </a>
+
+
+                            <div class="dropdown-divider"></div>
+
+
+                            <a class="dropdown-item"
+                               href="#"
+                               data-toggle="modal"
+                               data-target="#logoutModal">
+
+                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+
+                                Logout
+
+                            </a>
+
+
+                        </div>
+
+
+                    </li>
+
+
+                </ul>
+
+
+            </nav>
+
+
+
+            <!-- ==========================================
+                 MAIN CONTENT
+            =========================================== -->
+
+            <div class="container-fluid">
+
+
+                <!-- PAGE HEADER -->
+
+                <div class="page-header">
+
+
+                    <div class="eyebrow">
+
+                        Rental Management
+
                     </div>
+
+
+                    <h1 class="page-title">
+
+                        Edit Rental Data
+
+                    </h1>
+
+
+                    <p class="page-subtitle">
+
+                        Perbarui informasi pelanggan, kendaraan,
+                        durasi, dan pembayaran rental.
+
+                    </p>
+
+
                 </div>
+
+
+
+                <!-- ==========================================
+                     GET DATA RENTAL
+                =========================================== -->
+
+                <?php
+
+                include "../koneksi.php";
+
+
+                if (!isset($_GET['no_trx_arif'])) {
+
+                    echo "
+
+                    <div class='alert alert-danger'>
+
+                        <i class='fas fa-exclamation-circle mr-2'></i>
+
+                        Nomor transaksi tidak ditemukan.
+
+                    </div>
+
+                    ";
+
+                    exit;
+
+                }
+
+
+                $no_trx_arif =
+                    $_GET['no_trx_arif'];
+
+
+                $query = mysqli_query(
+                    $koneksi,
+                    "SELECT * FROM tbl_rental_arif
+                     WHERE no_trx_arif='$no_trx_arif'"
+                );
+
+
+                $data =
+                    mysqli_fetch_array($query);
+
+
+                if (!$data) {
+
+                    echo "
+
+                    <div class='alert alert-danger'>
+
+                        <i class='fas fa-exclamation-circle mr-2'></i>
+
+                        Data rental tidak ditemukan.
+
+                    </div>
+
+                    ";
+
+                    exit;
+
+                }
+
+                ?>
+
+
+
+                <!-- ==========================================
+                     RENTAL CARD
+                =========================================== -->
+
+                <div class="rental-card">
+
+
+                    <!-- CARD HEADER -->
+
+                    <div class="card-header-modern">
+
+
+                        <div class="header-icon">
+
+                            <i class="fas fa-pen-to-square"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <h2>
+
+                                Edit Informasi Rental
+
+                            </h2>
+
+
+                            <p>
+
+                                Periksa kembali data sebelum melakukan pembaruan.
+
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- CARD BODY -->
+
+                    <div class="card-body-modern">
+
+
+                        <form method="POST"
+                              action="update_rental.php">
+
+
+
+                            <!-- ==========================================
+                                 DETAIL TRANSAKSI
+                            =========================================== -->
+
+                            <div class="section-label">
+
+                                Detail Transaksi
+
+                            </div>
+
+
+                            <div class="row">
+
+
+                                <!-- NOMOR TRANSAKSI -->
+
+                                <div class="col-md-6 form-group-modern">
+
+
+                                    <label for="no_trx_arif"
+                                           class="form-label-modern">
+
+                                        No. Transaksi
+
+                                    </label>
+
+
+                                    <div class="input-wrap">
+
+
+                                        <i class="fas fa-hashtag"></i>
+
+
+                                        <input type="text"
+                                               name="no_trx_arif"
+                                               class="form-control-modern"
+                                               id="no_trx_arif"
+                                               value="<?php echo htmlspecialchars($data['no_trx_arif']); ?>"
+                                               readonly>
+
+
+                                    </div>
+
+
+                                </div>
+
+
+
+                                <!-- TANGGAL -->
+
+                                <div class="col-md-6 form-group-modern">
+
+
+                                    <label for="tgl_rental_arif"
+                                           class="form-label-modern">
+
+                                        Tanggal Ambil
+
+                                    </label>
+
+
+                                    <div class="input-wrap">
+
+
+                                        <i class="far fa-calendar"></i>
+
+
+                                        <input type="date"
+                                               name="tgl_rental_arif"
+                                               class="form-control-modern"
+                                               id="tgl_rental_arif"
+                                               value="<?php echo htmlspecialchars($data['tgl_rental_arif']); ?>"
+                                               required>
+
+
+                                    </div>
+
+
+                                </div>
+
+
+
+                                <!-- PELANGGAN -->
+
+                                <div class="col-md-6 form-group-modern">
+
+
+                                    <label for="pelanggan_arif"
+                                           class="form-label-modern">
+
+                                        Pelanggan
+
+                                    </label>
+
+
+                                    <div class="input-wrap">
+
+
+                                        <i class="fas fa-user"></i>
+
+
+                                        <select name="nik_ktp_arif"
+                                                class="form-select-modern"
+                                                id="pelanggan_arif"
+                                                required>
+
+
+                                            <option value="">
+
+                                                -- Pilih Pelanggan --
+
+                                            </option>
+
+
+                                            <?php
+
+                                            $tampil =
+                                                mysqli_query(
+                                                    $koneksi,
+                                                    "SELECT * FROM tbl_pelanggan_arif"
+                                                );
+
+
+                                            while (
+                                                $pelanggan =
+                                                mysqli_fetch_array($tampil)
+                                            ) {
+
+
+                                                $selected =
+                                                    (
+                                                        $pelanggan['nik_ktp_arif']
+                                                        ==
+                                                        $data['nik_ktp_arif']
+                                                    )
+
+                                                    ?
+
+                                                    "selected"
+
+                                                    :
+
+                                                    "";
+
+
+                                                echo "
+
+                                                <option
+                                                    value='{$pelanggan['nama_arif']}'
+                                                    $selected>
+
+                                                    {$pelanggan['nik_ktp_arif']}
+                                                    -
+                                                    {$pelanggan['nama_arif']}
+
+                                                </option>
+
+                                                ";
+
+                                            }
+
+                                            ?>
+
+
+                                        </select>
+
+
+                                    </div>
+
+
+                                </div>
+
+
+
+                                <!-- JAM -->
+
+                                <div class="col-md-6 form-group-modern">
+
+
+                                    <label for="jam_rental_arif"
+                                           class="form-label-modern">
+
+                                        Jam Ambil
+
+                                    </label>
+
+
+                                    <div class="input-wrap">
+
+
+                                        <i class="far fa-clock"></i>
+
+
+                                        <input type="time"
+                                               name="jam_rental_arif"
+                                               class="form-control-modern"
+                                               id="jam_rental_arif"
+                                               value="<?php echo htmlspecialchars($data['jam_rental_arif']); ?>"
+                                               required>
+
+
+                                    </div>
+
+
+                                </div>
+
+
+                            </div>
+
+
+
+                            <!-- ==========================================
+                                 KENDARAAN & PEMBAYARAN
+                            =========================================== -->
+
+                            <div class="section-label mt-2">
+
+                                Kendaraan & Pembayaran
+
+                            </div>
+
+
+                            <div class="row">
+
+
+                                <!-- MOBIL -->
+
+                                <div class="col-md-6 form-group-modern">
+
+
+                                    <label for="nama_mobil_arif"
+                                           class="form-label-modern">
+
+                                        Mobil
+
+                                    </label>
+
+
+                                    <div class="input-wrap">
+
+
+                                        <i class="fas fa-car"></i>
+
+
+                                        <select name="no_plat_arif"
+                                                class="form-select-modern"
+                                                id="nama_mobil_arif"
+                                                required>
+
+
+                                            <option value="">
+
+                                                -- Pilih Mobil --
+
+                                            </option>
+
+
+                                            <?php
+
+                                            $tampilMobil =
+                                                mysqli_query(
+                                                    $koneksi,
+                                                    "SELECT * FROM tbl_mobil_arif"
+                                                );
+
+
+                                            while (
+                                                $mobil =
+                                                mysqli_fetch_array($tampilMobil)
+                                            ) {
+
+
+                                                $selected =
+                                                    (
+                                                        $mobil['no_plat_arif']
+                                                        ==
+                                                        $data['no_plat_arif']
+                                                    )
+
+                                                    ?
+
+                                                    "selected"
+
+                                                    :
+
+                                                    "";
+
+
+                                                echo "
+
+                                                <option
+                                                    value='{$mobil['brand_mobil_arif']}'
+                                                    $selected>
+
+                                                    {$mobil['no_plat_arif']}
+                                                    -
+                                                    {$mobil['brand_mobil_arif']}
+
+                                                </option>
+
+                                                ";
+
+                                            }
+
+                                            ?>
+
+
+                                        </select>
+
+
+                                    </div>
+
+
+                                </div>
+
+
+
+                                <!-- LAMA RENTAL -->
+
+                                <div class="col-md-6 form-group-modern">
+
+
+                                    <label for="lama_arif"
+                                           class="form-label-modern">
+
+                                        Lama Rental
+
+                                    </label>
+
+
+                                    <div class="input-wrap">
+
+
+                                        <i class="fas fa-calendar-day"></i>
+
+
+                                        <input type="number"
+                                               class="form-control-modern"
+                                               id="lama_arif"
+                                               name="lama_arif"
+                                               value="<?php echo htmlspecialchars($data['lama_arif']); ?>"
+                                               min="1"
+                                               placeholder="Contoh: 3"
+                                               required
+                                               oninput="calculateTotal()">
+
+
+                                    </div>
+
+
+                                </div>
+
+
+
+                                <!-- HARGA -->
+
+                                <div class="col-md-6 form-group-modern">
+
+
+                                    <label for="harga_arif"
+                                           class="form-label-modern">
+
+                                        Harga Rental / Hari
+
+                                    </label>
+
+
+                                    <div class="input-wrap">
+
+
+                                        <i class="fas fa-money-bill-wave"></i>
+
+
+                                        <input type="number"
+                                               class="form-control-modern"
+                                               id="harga_arif"
+                                               name="harga_arif"
+                                               value="<?php echo htmlspecialchars($data['harga_arif']); ?>"
+                                               min="0"
+                                               placeholder="Contoh: 250000"
+                                               required
+                                               oninput="calculateTotal()">
+
+
+                                    </div>
+
+
+                                </div>
+
+
+
+                                <!-- TOTAL -->
+
+                                <div class="col-md-6 form-group-modern total-box">
+
+
+                                    <label for="total_bayar_arif"
+                                           class="form-label-modern">
+
+                                        Total Pembayaran
+
+                                    </label>
+
+
+                                    <div class="input-wrap">
+
+
+                                        <i class="fas fa-receipt"></i>
+
+
+                                        <input type="number"
+                                               class="form-control-modern"
+                                               id="total_bayar_arif"
+                                               name="total_bayar_arif"
+                                               value="<?php echo htmlspecialchars($data['total_bayar_arif']); ?>"
+                                               placeholder="Rp 0"
+                                               readonly>
+
+
+                                    </div>
+
+
+                                </div>
+
+
+                            </div>
+
+
+
+                            <!-- ==========================================
+                                 ACTION
+                            =========================================== -->
+
+                            <div class="action-row">
+
+
+                                <a href="rental.php"
+                                   class="btn-modern btn-back d-flex align-items-center justify-content-center">
+
+
+                                    <i class="fas fa-arrow-left mr-2"></i>
+
+                                    Kembali
+
+
+                                </a>
+
+
+                                <button type="submit"
+                                        class="btn-modern btn-update">
+
+
+                                    <i class="fas fa-save mr-2"></i>
+
+                                    Perbarui Rental
+
+
+                                </button>
+
+
+                            </div>
+
+
+                        </form>
+
+
+                    </div>
+
+
+                </div>
+
 
             </div>
+
+
         </div>
+
     </div>
 
-    <script>
-        function calculateTotal() {
-            const lama = document.getElementById('lama_arif').value;
-            const harga = document.getElementById('harga_arif').value;
-            const totalBayar = document.getElementById('total_bayar_arif');
-            totalBayar.value = (lama && harga) ? lama * harga : 0; // If no input, set to 0
-        }
-    </script>
+</div>
 
-    <script>
-        function showDeleteModal(url) {
-            document.getElementById('confirmDelete').setAttribute('href', url);
-            var deleteModal = new bootstrap.Modal(document.getElementById('deleteModal'));
-            deleteModal.show();
-        }
-    </script>
 
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.php">Logout</a>
-                </div>
+
+<!-- ==========================================
+     LOGOUT MODAL
+=========================================== -->
+
+<div class="modal fade"
+     id="logoutModal"
+     tabindex="-1"
+     role="dialog"
+     aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+
+
+    <div class="modal-dialog modal-dialog-centered"
+         role="document">
+
+
+        <div class="modal-content">
+
+
+            <div class="modal-header">
+
+
+                <h5 class="modal-title"
+                    id="exampleModalLabel">
+
+                    Keluar dari sistem?
+
+                </h5>
+
+
+                <button class="close"
+                        type="button"
+                        data-dismiss="modal"
+                        aria-label="Close">
+
+
+                    <span aria-hidden="true">
+
+                        &times;
+
+                    </span>
+
+
+                </button>
+
+
             </div>
+
+
+            <div class="modal-body">
+
+                Anda akan diarahkan ke halaman login.
+
+            </div>
+
+
+            <div class="modal-footer">
+
+
+                <button class="btn btn-light"
+                        type="button"
+                        data-dismiss="modal">
+
+                    Batal
+
+                </button>
+
+
+                <a class="btn btn-primary"
+                   href="login.php">
+
+                    Logout
+
+                </a>
+
+
+            </div>
+
+
         </div>
+
+
     </div>
 
-    <script src="../vendor/jquery/jquery.min.js"></script>
-    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="../js/sb-admin-2.min.js"></script>
-    <script src="../vendor/chart.js/Chart.min.js"></script>
-    <script src="../js/demo/chart-area-demo.js"></script>
-    <script src="../js/demo/chart-pie-demo.js"></script>
+
+</div>
+
+
+
+<!-- ==========================================
+     JAVASCRIPT
+=========================================== -->
+
+<script>
+
+function calculateTotal() {
+
+    const lama =
+        parseFloat(
+            document.getElementById(
+                'lama_arif'
+            ).value
+        ) || 0;
+
+
+    const harga =
+        parseFloat(
+            document.getElementById(
+                'harga_arif'
+            ).value
+        ) || 0;
+
+
+    const totalBayar =
+        document.getElementById(
+            'total_bayar_arif'
+        );
+
+
+    totalBayar.value =
+        lama * harga;
+
+}
+
+</script>
+
+
+
+<!-- JQUERY -->
+
+<script src="../vendor/jquery/jquery.min.js"></script>
+
+
+<!-- BOOTSTRAP -->
+
+<script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+<!-- JQUERY EASING -->
+
+<script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+
+
+<!-- SB ADMIN -->
+
+<script src="../js/sb-admin-2.min.js"></script>
+
 
 </body>
 
